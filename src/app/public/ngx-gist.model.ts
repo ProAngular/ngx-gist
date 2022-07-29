@@ -171,7 +171,7 @@ const gistFilesCodec = io.readonly(
   'GistFiles',
 );
 
-const gistCodec = io.readonly(
+export const gistCodec = io.readonly(
   io.intersection([
     io.type({
       comments: io.number,

@@ -1,3 +1,26 @@
+@import "https://fonts.googleapis.com/icon?family=Material+Icons";
+
+:host.deeppurple-amber ::ng-deep {
+  // https://unpkg.com/@angular/material@latest/prebuilt-themes/deeppurple-amber.css
+  // @import "https://unpkg.com/@angular/material@14.1.0/prebuilt-themes/deeppurple-amber.css";
+  @import "~@angular/material/prebuilt-themes/deeppurple-amber.css";
+}
+
+:host.indigo-pink {
+  // https://unpkg.com/@angular/material@latest/prebuilt-themes/indigo-pink.css
+  @import "https://unpkg.com/@angular/material@14.1.0/prebuilt-themes/indigo-pink.css";
+}
+
+:host.pink-bluegrey {
+  // https://unpkg.com/@angular/material@latest/prebuilt-themes/pink-bluegrey.css
+  @import "https://unpkg.com/@angular/material@14.1.0/prebuilt-themes/pink-bluegrey.css";
+}
+
+:host.purble-green {
+  // https://unpkg.com/@angular/material@latest/prebuilt-themes/purple-green.css
+  @import "https://unpkg.com/@angular/material@14.1.0/prebuilt-themes/purple-green.css";
+}
+
 pre {
   display: flex;
   margin-top: 0;
