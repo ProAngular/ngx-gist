@@ -1,0 +1,89 @@
+pre {
+  display: flex;
+  margin-top: 0;
+  margin-bottom: 0;
+  word-wrap: break-word;
+
+  code {
+    flex: 1;
+    line-height: 1.5em;
+    font-size: 14px;
+    min-height: 100%;
+    padding: 1em 1.2em;
+  }
+}
+
+::ng-deep {
+  mat-card.code-container {
+    padding: 0;
+    margin-bottom: 3em;
+
+    mat-card-footer {
+      height: 1rem;
+      border-top: 1px solid rgba(0, 0, 0, 0.12);
+      padding: 0.75rem;
+      margin: 0;
+      display: flex;
+      flex-direction: row-reverse;
+
+      a {
+        font-size: 0.75rem;
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+
+        > mat-icon {
+          font-size: 1.5rem;
+          position: relative;
+          top: 0;
+          padding-right: 0.25rem;
+        }
+      }
+    }
+  }
+
+  .dark-theme mat-card-footer {
+    border-top: 1px solid rgba(255, 255, 255, 0.12) !important;
+  }
+
+  pre > code.hljs-line-numbers {
+    padding: 0 !important;
+  }
+
+  .hljs {
+    margin: 0;
+    padding: 10px;
+    //border: 1px solid gray;
+    //border-radius: 4px;
+    transition: border ease 1s;
+  }
+
+  .hljs-ln {
+    padding: 8px 0;
+
+    tr {
+      &:first-child td {
+        padding-top: 8px !important;
+      }
+
+      &:last-child td {
+        padding-bottom: 8px !important;
+      }
+    }
+  }
+
+  /* for block of numbers */
+  td.hljs-ln-numbers {
+    user-select: none;
+    text-align: center;
+    border-right: 1px solid gray;
+    vertical-align: top;
+    padding-right: 8px !important;
+    padding-left: 8px !important;
+  }
+
+  /* for block of code */
+  td.hljs-ln-code {
+    padding-left: 8px !important;
+  }
+}

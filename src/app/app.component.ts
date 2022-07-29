@@ -9,12 +9,13 @@ import { Component } from '@angular/core';
       <h3 align="center">
         Examples of displaying local and GitHub gists and code snippets.
       </h3>
-      <!-- EXAMPLE: FETCH GIST FROM GITHUB -->
-      <ngx-gist></ngx-gist>
       <!-- EXAMPLE: LOCAL GIST -->
-      <ngx-gist></ngx-gist>
+      <!-- EXAMPLE: FETCH GIST FROM GITHUB -->
+      <ngx-gist
+        gistId="d55ea012b585a16a9970878d90106d74"
+        displayOnlyFileName="super.js"
+      ></ngx-gist>
       <!-- EXAMPLE: DISPLAYING SPECIFIC FILES -->
-      <ngx-gist></ngx-gist>
     </ngx-body>
     <ngx-footer #footer></ngx-footer>
   `,
