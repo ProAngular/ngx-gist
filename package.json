@@ -35,8 +35,7 @@
     "@angular/common": ">=12 <15",
     "@angular/core": ">=12 <15",
     "@angular/material": ">=12 <15",
-    "@angular/platform-browser": ">=12 <15",
-    "@ngneat/until-destroy": "^9.2.1"
+    "@angular/platform-browser": ">=12 <15"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "^14.1.0",
