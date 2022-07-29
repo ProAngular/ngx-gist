@@ -5,9 +5,10 @@ import {
   isNonEmptyString,
   parsedJsonFromStringCodec,
 } from './ngx-gist.utilities';
+import { default as hljs } from 'highlight.js';
 
 export class NgxGist implements Gist {
-  public constructor(args: Gist) {
+  public constructor(args: Gist & Pick<NgxGist, 'languageOverride'>) {
     this.comments = args.comments;
     this.comments_url = args.comments_url;
     this.commits_url = args.commits_url;
@@ -28,8 +29,23 @@ export class NgxGist implements Gist {
     this.updated_at = new Date(args.updated_at);
     this.url = args.url;
     this.user = args.user;
+
+    // Additional properties
+    this.languageOverride = args.languageOverride;
+    const highlightedFiles: NgxGist['highlightedFiles'] = [];
+    for (const key in this.files) {
+      if (this.files[key]) {
+        const file = this.files[key];
+        highlightedFiles.push({
+          ...file,
+          highlightedContent: getHighlightedContent(file.content),
+        });
+      }
+    }
+    this.highlightedFiles = highlightedFiles;
   }
 
+  /** Core gist properties */
   /* eslint-disable @typescript-eslint/naming-convention */
   public readonly comments: number;
   public readonly comments_url: string;
@@ -53,23 +69,36 @@ export class NgxGist implements Gist {
   public readonly user?: unknown;
   /* eslint-enable @typescript-eslint/naming-convention */
 
+  /** Additional properties */
+  public readonly highlightedFiles: Array<
+    io.TypeOf<typeof gistFilesContent> & HighlightedContent
+  >;
+  public readonly languageOverride?: string;
+
   /**
    * Create a local, static gist object. Do not use this for fetched data.
    * Used for creating and displaying local code samples.
+   *
+   * Use `deserialize` sibling function for remote "unknown" responses.
    *
    * @param args Minimally necessary paramaters for displaying local code.
    * @returns A 'partial' model in which unnecessary fields are dummny data.
    */
   public static create(
-    args: Pick<Gist, 'files' | 'created_at' | 'description'>,
+    args: Pick<Gist, 'files' | 'created_at' | 'description'> &
+      Pick<NgxGist, 'languageOverride'>,
   ): NgxGist {
     return new NgxGist({
-      comments: 0,
-      comments_url: '',
-      commits_url: '',
+      // Properties with settable values. These are the mimimum values needed
+      // for displaying non "remote".
       created_at: new Date(args.created_at),
       description: args.description,
       files: args.files,
+      languageOverride: args.languageOverride,
+      // Empty properties that aren't needed for displaying non "remote" gists
+      comments: 0,
+      comments_url: '',
+      commits_url: '',
       forks: [],
       forks_url: '',
       git_pull_url: '',
@@ -88,7 +117,7 @@ export class NgxGist implements Gist {
   }
 
   /**
-   * Deserialize and decode fetched/unkown data into the full model.
+   * Deserialize and decode fetched/unknown data into the full model.
    *
    * @param value Unknown value, but expects a full model either by object or JSON string.
    * @returns Either the full model or null if deserialization fails.
@@ -102,13 +131,28 @@ export class NgxGist implements Gist {
         ? decodeValueElseNull(gistFromJsonStringCodec)(value)
         : null);
     return decoded
-      ? {
+      ? new NgxGist({
           ...decoded,
           created_at: new Date(decoded.created_at),
           updated_at: new Date(decoded.updated_at),
-        }
+        })
       : null;
   }
+}
+
+interface HighlightedContent {
+  highlightedContent: string;
+}
+
+function getHighlightedContent(
+  baseContent: string,
+  languageOverride?: string,
+): string {
+  if (languageOverride) {
+    return hljs.highlight(baseContent, { language: languageOverride }).value;
+  }
+
+  return hljs.highlightAuto(baseContent).value;
 }
 
 const gitHubUserCodec = io.readonly(
@@ -155,21 +199,17 @@ const gistHistoryCodec = io.readonly(
   'GistHistory',
 );
 
-const gistFilesCodec = io.readonly(
-  io.record(
-    io.string,
-    io.type({
-      content: io.string,
-      filename: io.string,
-      language: io.string,
-      raw_url: io.string,
-      size: io.number,
-      truncated: io.boolean,
-      type: io.string,
-    }),
-  ),
-  'GistFiles',
-);
+const gistFilesContent = io.type({
+  content: io.string,
+  filename: io.string,
+  language: io.string,
+  raw_url: io.string,
+  size: io.number,
+  truncated: io.boolean,
+  type: io.string,
+});
+
+const gistFilesCodec = io.record(io.string, gistFilesContent);
 
 export const gistCodec = io.readonly(
   io.intersection([
@@ -207,7 +247,7 @@ const gistFromJsonStringCodec = parsedJsonFromStringCodec.pipe(
 );
 
 /**
- * Official Gist objecio.
+ * Official Gist object
  * https://docs.github.com/en/rest/gists
  */
 type Gist = io.TypeOf<typeof gistCodec>;

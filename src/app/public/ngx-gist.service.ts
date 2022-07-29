@@ -61,11 +61,11 @@ export class NgxGistService {
 
     const gist = storedGist.value;
     // All is good, return unexpired gist
-    return {
+    return new NgxGist({
       ...gist,
       created_at: new Date(gist.created_at),
       updated_at: new Date(gist.updated_at),
-    };
+    });
   }
 
   public setToCache(gist: NgxGist, expiresInMin?: number): void {
