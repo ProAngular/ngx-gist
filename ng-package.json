@@ -1,0 +1,8 @@
+{
+  "$schema": "node_modules/ng-packagr/ng-package.schema.json",
+  "dest": "dist/npm",
+  "lib": {
+    "entryFile": "src/app/public/public.ts"
+  },
+  "allowedNonPeerDependencies": []
+}
