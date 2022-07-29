@@ -1,7 +1,7 @@
 import { NgxGistService } from './ngx-gist.service';
 import { isNonEmptyValue } from './ngx-gist.utilities';
 import { NgxGist } from './ngx-gist.model';
-import { Component, HostBinding, Inject, Input, OnInit } from '@angular/core';
+import { Component, Inject, Input, OnInit } from '@angular/core';
 import { Language, default as hljs } from 'highlight.js';
 import { filter, firstValueFrom, ReplaySubject } from 'rxjs';
 import { UntilDestroy, untilDestroyed } from '@ngneat/until-destroy';
@@ -103,7 +103,7 @@ export class NgxGistComponent implements OnInit {
    *
    * Default: `undefined`
    */
-  @Input() @HostBinding('class') public materialTheme:
+  @Input() public materialTheme:
     | 'deeppurple-amber'
     | 'indigo-pink'
     | 'pink-bluegrey'

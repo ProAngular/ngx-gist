@@ -1,25 +1,5 @@
+// Remove this if this is already in your project.
 @import "https://fonts.googleapis.com/icon?family=Material+Icons";
-
-:host.deeppurple-amber ::ng-deep {
-  // https://unpkg.com/@angular/material@latest/prebuilt-themes/deeppurple-amber.css
-  // @import "https://unpkg.com/@angular/material@14.1.0/prebuilt-themes/deeppurple-amber.css";
-  @import "~@angular/material/prebuilt-themes/deeppurple-amber.css";
-}
-
-:host.indigo-pink {
-  // https://unpkg.com/@angular/material@latest/prebuilt-themes/indigo-pink.css
-  @import "https://unpkg.com/@angular/material@14.1.0/prebuilt-themes/indigo-pink.css";
-}
-
-:host.pink-bluegrey {
-  // https://unpkg.com/@angular/material@latest/prebuilt-themes/pink-bluegrey.css
-  @import "https://unpkg.com/@angular/material@14.1.0/prebuilt-themes/pink-bluegrey.css";
-}
-
-:host.purble-green {
-  // https://unpkg.com/@angular/material@latest/prebuilt-themes/purple-green.css
-  @import "https://unpkg.com/@angular/material@14.1.0/prebuilt-themes/purple-green.css";
-}
 
 pre {
   display: flex;
@@ -65,10 +45,6 @@ pre {
     }
   }
 
-  .dark-theme mat-card-footer {
-    border-top: 1px solid rgba(255, 255, 255, 0.12) !important;
-  }
-
   pre > code.hljs-line-numbers {
     padding: 0 !important;
   }
@@ -76,8 +52,6 @@ pre {
   .hljs {
     margin: 0;
     padding: 10px;
-    //border: 1px solid gray;
-    //border-radius: 4px;
     transition: border ease 1s;
   }
 
@@ -95,7 +69,6 @@ pre {
     }
   }
 
-  /* for block of numbers */
   td.hljs-ln-numbers {
     user-select: none;
     text-align: center;
@@ -105,7 +78,6 @@ pre {
     padding-left: 8px !important;
   }
 
-  /* for block of code */
   td.hljs-ln-code {
     padding-left: 8px !important;
   }
