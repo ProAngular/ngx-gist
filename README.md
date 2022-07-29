@@ -17,4 +17,8 @@
 
 # Description
 
+An Angular Material and HighlighJs styled display box for GitHub gist and local code snippets.
+
+# Demo
+
 TODO: Further documentation.
