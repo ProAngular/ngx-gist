@@ -1,0 +1,19 @@
+name: "Verify Pull Request"
+on: pull_request
+jobs:
+  verify_pull_request:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Checkout 🛎️
+        run: npm ci
+
+      - name: Verify Code 👌
+        run: |
+          npm run lint
+          npm run prettier:check
+
+      - name: Build 🔧
+        run: |
+          npm run build:prod
+          npm run npm-build-package

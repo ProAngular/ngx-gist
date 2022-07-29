@@ -1,0 +1,106 @@
+{
+  "name": "@proangular/ngx-gist",
+  "version": "1.0.0",
+  "description": "An Angular Material and HighlighJs styled display box for GitHub gist and local code snippets.",
+  "author": "Pro Angular <webmaster@proangular.com>",
+  "homepage": "https://www.proangular.com",
+  "private": false,
+  "engines": {
+    "node": ">=16.14.2 <17",
+    "npm": ">=8.5.0"
+  },
+  "scripts": {
+    "build": "ng build",
+    "build:prod": "ng build --configuration production",
+    "lint": "ng lint",
+    "lint-staged": "lint-staged",
+    "npm-build-package": "ng-packagr -p ng-package.json",
+    "ng": "ng",
+    "postinstall": "is-ci || husky install",
+    "prepare": "husky install",
+    "prettier": "prettier --write .",
+    "prettier:check": "prettier --check .",
+    "publish:beta": "npm run npm-build-package && npm publish --tag beta --folder dist/npm",
+    "start": "ng serve --open",
+    "test": "ng test",
+    "start:prod": "ng serve --configuration production --open"
+  },
+  "peerDependencies": {
+    "@angular/common": ">=12 <15",
+    "@angular/core": ">=12 <15",
+    "@angular/material": ">=12 <15",
+    "@angular/platform-browser": ">=12 <15",
+    "@ngneat/until-destroy": "^9.2.1",
+    "highlight.js": "^11.6.0",
+    "io-ts": "^2.2.17",
+    "io-ts-types": "^0.5.16"
+  },
+  "devDependencies": {
+    "@angular-devkit/build-angular": "^14.1.0",
+    "@angular-eslint/builder": "14.0.1",
+    "@angular-eslint/eslint-plugin": "14.0.1",
+    "@angular-eslint/eslint-plugin-template": "14.0.1",
+    "@angular-eslint/schematics": "14.0.1",
+    "@angular-eslint/template-parser": "14.0.1",
+    "@angular/cli": "~14.1.0",
+    "@angular/compiler": "^14.1.0",
+    "@angular/compiler-cli": "^14.1.0",
+    "@angular/forms": "^14.1.0",
+    "@angular/platform-browser-dynamic": "^14.1.0",
+    "@angular/router": "^14.1.0",
+    "@types/jasmine": "~4.0.0",
+    "@typescript-eslint/eslint-plugin": "5.29.0",
+    "@typescript-eslint/parser": "5.29.0",
+    "eslint": "^8.18.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-jsdoc": "^39.3.3",
+    "eslint-plugin-prefer-arrow": "^1.2.3",
+    "eslint-plugin-rxjs": "^5.0.2",
+    "eslint-plugin-rxjs-angular": "^2.0.0",
+    "eslint-plugin-unicorn": "^43.0.1",
+    "husky": "^8.0.1",
+    "is-ci": "^3.0.1",
+    "jasmine-core": "~4.2.0",
+    "karma": "~6.4.0",
+    "karma-chrome-launcher": "~3.1.0",
+    "karma-coverage": "~2.2.0",
+    "karma-jasmine": "~5.1.0",
+    "karma-jasmine-html-reporter": "~2.0.0",
+    "ng-packagr": "^14.1.0",
+    "prettier": "^2.7.1",
+    "rxjs": "~7.5.0",
+    "tslib": "^2.3.0",
+    "typescript": "~4.7.2",
+    "zone.js": "~0.11.4"
+  },
+  "contributors": [{
+    "name": "Cody Tolene",
+    "email": "webmaster@codytolene.com",
+    "url": "https://www.codytolene.com"
+  }],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ProAngular/ngx-gist.git"
+  },
+  "keywords": [
+    "pro",
+    "angular",
+    "gist",
+    "code",
+    "box",
+    "programming",
+    "snippet",
+    "ngx-gist",
+    "ngx"
+  ],
+  "bugs": {
+    "url": "https://github.com/ProAngular/ngx-gist/issues"
+  },
+  "funding": {
+    "type": "github",
+    "url": "https://github.com/sponsors/proangular"
+  },
+  "main": "src/main.ts"
+}
