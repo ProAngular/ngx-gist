@@ -1,6 +1,6 @@
 <p align="center">
   <a href="https://www.ProAngular.com" target="_blank">
-    <img src="src/assets/images/pro-angular-logo.png" />
+    <img src="https://github.com/ProAngular/ngx-gist/raw/main/src/assets/images/pro-angular-logo.png" />
   </a>
   <h1 align="center">
     <a href="https://www.ProAngular.com" target="_blank">

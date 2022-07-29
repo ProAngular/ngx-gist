@@ -70,9 +70,7 @@ export class NgxGist implements Gist {
   /* eslint-enable @typescript-eslint/naming-convention */
 
   /** Additional properties */
-  public readonly highlightedFiles: Array<
-    io.TypeOf<typeof gistFilesContent> & HighlightedContent
-  >;
+  public readonly highlightedFiles: HighlightedFiles;
   public readonly languageOverride?: string;
 
   /**
@@ -85,15 +83,32 @@ export class NgxGist implements Gist {
    * @returns A 'partial' model in which unnecessary fields are dummny data.
    */
   public static create(
-    args: Pick<Gist, 'files' | 'created_at' | 'description'> &
-      Pick<NgxGist, 'languageOverride'>,
+    args: { files: Files } & Partial<Pick<Gist, 'created_at' | 'description'>> & // Required // Optional
+      Pick<NgxGist, 'languageOverride'>, // Optional
   ): NgxGist {
+    const files: NgxGist['files'] = args.files.reduce((prev, curr) => {
+      const file: GistFilesContent = {
+        // Passed in values, use these.
+        content: curr.content,
+        filename: curr.filename,
+        // Leave these empty, not needed for a local, static model.
+        language: '',
+        raw_url: '',
+        size: 0,
+        truncated: false,
+        type: '',
+      };
+      return {
+        ...prev,
+        [curr.filename]: file,
+      };
+    }, {});
     return new NgxGist({
       // Properties with settable values. These are the mimimum values needed
       // for displaying non "remote".
-      created_at: new Date(args.created_at),
-      description: args.description,
-      files: args.files,
+      created_at: args.created_at ? new Date(args.created_at) : new Date(),
+      description: args.description ?? '',
+      files,
       languageOverride: args.languageOverride,
       // Empty properties that aren't needed for displaying non "remote" gists
       comments: 0,
@@ -139,6 +154,10 @@ export class NgxGist implements Gist {
       : null;
   }
 }
+
+type Files = Array<Pick<GistFilesContent, 'content' | 'filename'>>;
+
+type HighlightedFiles = Array<GistFilesContent & HighlightedContent>;
 
 interface HighlightedContent {
   highlightedContent: string;
@@ -208,6 +227,7 @@ const gistFilesContent = io.type({
   truncated: io.boolean,
   type: io.string,
 });
+type GistFilesContent = io.TypeOf<typeof gistFilesContent>;
 
 const gistFilesCodec = io.record(io.string, gistFilesContent);
 

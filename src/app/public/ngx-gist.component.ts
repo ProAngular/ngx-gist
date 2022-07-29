@@ -16,7 +16,7 @@ import { DOCUMENT } from '@angular/common';
         <mat-tab
           *ngFor="
             let file of gist.highlightedFiles
-              | gistFileFilter: displayOnlyFileName
+              | gistFileFilter: displayOnlyFileNames
           "
           [label]="file.filename"
         >
@@ -25,16 +25,18 @@ import { DOCUMENT } from '@angular/common';
           </pre>
         </mat-tab>
       </mat-tab-group>
-      <mat-card-footer>
+
+      <mat-card-footer *ngIf="gistIdChanges | async as gid">
         <a
-          *ngIf="gistIdChanges | async as gid"
+          *ngIf="!hideGistLink"
           target="_blank"
           [href]="'https://gist.github.com/' + gid"
         >
           <mat-icon>link</mat-icon> Open Gist on GitHub
         </a>
       </mat-card-footer>
-      <ng-template #loading> Loading Code Snippet... </ng-template>
+
+      <ng-template #loading>Loading Code Snippet...</ng-template>
     </mat-card>
   `,
   styleUrls: ['./ngx-gist.component.scss'],
@@ -50,13 +52,23 @@ export class NgxGistComponent implements OnInit {
   private htmlLinkElement: HTMLLinkElement | null = null;
 
   /**
-   * Display in the DOM only the selected filename from the gists files array.
-   *
-   * TODO: Make this possible for string array input.
+   * Display in the DOM only the selected filename(s) from the gists files array.
    *
    * Default: `undefined`
+   *
+   * Example: `'my-styles.scss'` or `'super-feature.ts'`
+   *
+   * Tip: Can be either a string or string array. File names much match exactly,
+   * be sure to remove any leading or trailing whitespace in the provided strings.
    */
-  @Input() public displayOnlyFileName?: string;
+  @Input() public displayOnlyFileNames?: string | readonly string[];
+  /**
+   * Optionally hide the gist link which opens the gist on GitHub. The gist links
+   * automatically dispaly for remote gists, but can be hidden with this feature.
+   *
+   * Default: `false`
+   */
+  @Input() public hideGistLink = false;
   /**
    * Provide a static gist model here directly which will be displayed if
    * no `gistId` is provided for remote fetching. Also this model will be
@@ -77,12 +89,13 @@ export class NgxGistComponent implements OnInit {
    * URL of the gists you create. For example the id `TH1515th31DT0C0PY` in:
    * https://gist.github.com/FakeUserName/TH1515th31DT0C0PY
    *
-   * Alternatively, provide a value directly in the sibling input `gist`.
+   * Default: `undefined`
+   *
+   * Tip: Alternatively, provide a value directly in the sibling input `gist`.
    */
   @Input() public set gistId(value: string) {
     this.gistIdSubject.next(value);
   }
-  // We want reactive behavior for `gistId` so we can update gists asynchronously
   private readonly gistIdSubject = new ReplaySubject<
     NgxGistComponent['gistId']
   >(1);
@@ -91,22 +104,23 @@ export class NgxGistComponent implements OnInit {
    * When defined, override automatic language detection [and styling] and
    * treat all gists as this lanuage.
    *
-   * See supported languages here:
-   * https://github.com/highlightjs/highlight.js/blob/main/SUPPORTED_LANGUAGES.md
-   *
    * Default: `undefined`
+   *
+   * Tip: See supported language strings here:
+   * https://github.com/highlightjs/highlight.js/blob/main/SUPPORTED_LANGUAGES.md
    */
   @Input() public languageName?: Language['name'];
   /**
    * Define a material core theme to apply. Ideally, you should already have
    * your global material theme set at the root of your project so try to
-   * avoid using this if possible. Note: These are also loaded from a CDN.
+   * avoid using this if possible.
    *
-   * See theming Angular Material: https://material.angular.io/guide/theming
-   *
-   * CDN used: `https://unpkg.com`
+   * Note: These are loaded from the CDN: `https://unpkg.com`
    *
    * Default: `undefined`
+   *
+   * Tip: See theming Angular Material: https://material.angular.io/guide/theming
+   * if you need help applying a global material theme.
    */
   @Input() public materialTheme:
     | 'deeppurple-amber'
@@ -117,7 +131,7 @@ export class NgxGistComponent implements OnInit {
   /**
    * Cache the GitHub gist request in local memory for 24 hours. GitHub has a
    * request limit, so this helps in reducing bandwidth. Loads previously
-   * fetched gist content from the users machine.
+   * fetched gist content from the users machine on refresh and page re-visits.
    *
    * Default: `true`
    */
