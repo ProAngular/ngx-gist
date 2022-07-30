@@ -14,9 +14,20 @@ import { Component } from '@angular/core';
       <hr />
 
       <h4>FETCHED GIST (AUTO CACHED FOR 24 HOURS)</h4>
+      <p>
+        ngx-gist will fetch the gist once and store it locally for 24 hours. In
+        that timeframe if the user returns or visits another page where this
+        gist was previously loaded, it will reload the content without having to
+        reach out to GitHub again.
+      </p>
       <ngx-gist gistId="d55ea012b585a16a9970878d90106d74"></ngx-gist>
 
       <h4>FETCHED GIST (FORCED NO CACHE)</h4>
+      <p>
+        Force no cache. This will force ngx-gist to retrieve the content live
+        from GitHub every time this content loads. This is disabled by default,
+        but could be useful if your gists change frequently.
+      </p>
       <ngx-gist
         gistId="d55ea012b585a16a9970878d90106d74"
         [useCache]="false"
@@ -45,6 +56,15 @@ import { Component } from '@angular/core';
         is displayed here.
       </p>
       <ngx-gist [gist]="localGistObject"></ngx-gist>
+
+      <h4>HIDING LINE NUMBERS</h4>
+      <p>
+        Line numbers are enabled by default, but you can turn them off like so.
+      </p>
+      <ngx-gist
+        gistId="d55ea012b585a16a9970878d90106d74"
+        [showLineNumbers]="false"
+      ></ngx-gist>
     </ngx-body>
     <ngx-footer #footer></ngx-footer>
   `,

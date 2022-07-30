@@ -6,6 +6,12 @@ import { Language } from 'highlight.js';
 import { BehaviorSubject, filter, firstValueFrom, ReplaySubject } from 'rxjs';
 import { UntilDestroy, untilDestroyed } from '@ngneat/until-destroy';
 import { DOCUMENT } from '@angular/common';
+import { NgxGistLineNumbersService } from './ngx-gist-line-numbers.service';
+import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
+import {
+  MaterialPrebuiltTheme,
+  NgxGistThemeService,
+} from './ngx-gist-theme.service';
 
 @UntilDestroy()
 @Component({
@@ -21,7 +27,13 @@ import { DOCUMENT } from '@angular/common';
           [label]="file.filename"
         >
           <pre>
-            <code [innerHTML]="file.highlightedContent"></code>
+            <code 
+              *ngIf="applyLineNumbers(file.highlightedContent) as content"
+              [innerHTML]="content"
+            ></code>
+            <ng-template #error>
+              <code>Error loading code...</code>
+            </ng-template>
           </pre>
         </mat-tab>
       </mat-tab-group>
@@ -43,14 +55,12 @@ import { DOCUMENT } from '@angular/common';
 })
 export class NgxGistComponent implements OnInit {
   public constructor(
-    @Inject(DOCUMENT)
-    private readonly document: Document,
+    @Inject(DOCUMENT) private readonly document: Document,
+    private readonly domSanitizer: DomSanitizer,
     private readonly ngxGistService: NgxGistService,
+    private readonly ngxGistLineNumbersService: NgxGistLineNumbersService,
+    private readonly ngxGistThemeService: NgxGistThemeService,
   ) {}
-
-  public codeSnippet: string | null = null;
-  private htmlLinkElement: HTMLLinkElement | null = null;
-
   /**
    * Display in the DOM only the selected filename(s) from the gists files array.
    *
@@ -122,12 +132,13 @@ export class NgxGistComponent implements OnInit {
    * Tip: See theming Angular Material: https://material.angular.io/guide/theming
    * if you need help applying a global material theme.
    */
-  @Input() public materialTheme:
-    | 'deeppurple-amber'
-    | 'indigo-pink'
-    | 'pink-bluegrey'
-    | 'purple-green'
-    | undefined = undefined;
+  @Input() public materialTheme: MaterialPrebuiltTheme | undefined = undefined;
+  /**
+   * Display or hide the line numbers in your gist code snippets.
+   *
+   * Default: `true`
+   */
+  @Input() public showLineNumbers = true;
   /**
    * Cache the GitHub gist request in local memory for 24 hours. GitHub has a
    * request limit, so this helps in reducing bandwidth. Loads previously
@@ -139,6 +150,10 @@ export class NgxGistComponent implements OnInit {
 
   public async ngOnInit(): Promise<void> {
     this.setTheme();
+
+    if (this.showLineNumbers) {
+      await this.ngxGistLineNumbersService.load();
+    }
 
     this.gistIdChanges
       .pipe(filter(isNonEmptyValue), untilDestroyed(this))
@@ -174,12 +189,19 @@ export class NgxGistComponent implements OnInit {
     if (!this.materialTheme) {
       return;
     }
+    this.ngxGistThemeService.setTheme(this.materialTheme);
+  }
 
-    this.htmlLinkElement = this.document.createElement('link');
-    this.htmlLinkElement.href = `https://unpkg.com/@angular/material@14.1.0/prebuilt-themes/${this.materialTheme}.css`;
-    this.htmlLinkElement.media = 'screen,print';
-    this.htmlLinkElement.rel = 'stylesheet';
-    this.htmlLinkElement.type = 'text/css';
-    this.document.head.appendChild(this.htmlLinkElement);
+  public applyLineNumbers(highlightedConent: string): SafeHtml | null {
+    if (
+      this.showLineNumbers &&
+      this.document.defaultView?.hljs &&
+      typeof this.document.defaultView.hljs.lineNumbersValue === 'function'
+    ) {
+      return this.domSanitizer.bypassSecurityTrustHtml(
+        this.document.defaultView.hljs.lineNumbersValue(highlightedConent),
+      );
+    }
+    return highlightedConent;
   }
 }

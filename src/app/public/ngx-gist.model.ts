@@ -5,7 +5,7 @@ import {
   isNonEmptyString,
   parsedJsonFromStringCodec,
 } from './ngx-gist.utilities';
-import { default as hljs } from 'highlight.js';
+import hljs from 'highlight.js';
 
 export class NgxGist implements Gist {
   public constructor(args: Gist & Pick<NgxGist, 'languageOverride'>) {
@@ -167,11 +167,17 @@ function getHighlightedContent(
   baseContent: string,
   languageOverride?: string,
 ): string {
+  let highlighted = baseContent;
+
   if (languageOverride) {
-    return hljs.highlight(baseContent, { language: languageOverride }).value;
+    highlighted = hljs.highlight(baseContent, {
+      language: languageOverride,
+    }).value;
+  } else {
+    highlighted = hljs.highlightAuto(baseContent).value;
   }
 
-  return hljs.highlightAuto(baseContent).value;
+  return highlighted;
 }
 
 const gitHubUserCodec = io.readonly(

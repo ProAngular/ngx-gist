@@ -13,8 +13,6 @@ export class GistFileFilterPipe implements PipeTransform {
       return [];
     }
 
-    console.log(displayOnlyFileNames);
-
     if (!displayOnlyFileNames || displayOnlyFileNames === '') {
       return files;
     }
