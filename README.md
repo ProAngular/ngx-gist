@@ -14,6 +14,8 @@
 [![Join the chat at https://gitter.im/ProAngular/community](https://badges.gitter.im/ProAngular/lobby.svg)](https://gitter.im/ProAngular/community)
 [![Verify and Deploy to GitHub Packages](https://github.com/ProAngular/ngx-gist/actions/workflows/on-merge-main-deploy-gpr.yml/badge.svg)](https://github.com/ProAngular/ngx-gist/actions/workflows/on-merge-main-deploy-gpr.yml)
 [![Verify and Deploy to npmjs](https://github.com/ProAngular/ngx-gist/actions/workflows/on-merge-main-deploy-npmjs.yml/badge.svg)](https://github.com/ProAngular/ngx-gist/actions/workflows/on-merge-main-deploy-npmjs.yml)
+[![npm bundle size (minified + gzip)](https://img.shields.io/bundlephobia/minzip/@ProAngular/ngx-gist.svg)](https://bundlephobia.com/result?p=@ProAngular/ngx-gist)
+[![License](https://img.shields.io/npm/l/express.svg?maxAge=2592000)](/LICENSE)
 
 # Description
 
