@@ -12,6 +12,7 @@ import { Component } from '@angular/core';
       section {
         padding: 1rem;
         min-height: 90vh;
+        margin-top: 64px;
       }
     `,
   ],
