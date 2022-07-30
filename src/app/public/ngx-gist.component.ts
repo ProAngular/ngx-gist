@@ -61,6 +61,10 @@ export class NgxGistComponent implements OnInit {
     private readonly ngxGistLineNumbersService: NgxGistLineNumbersService,
     private readonly ngxGistThemeService: NgxGistThemeService,
   ) {}
+
+  // TODO: Apply HighlightJs code theme.
+  // @Input() public codeTheme?: unknown;
+
   /**
    * Display in the DOM only the selected filename(s) from the gists files array.
    *
@@ -132,7 +136,7 @@ export class NgxGistComponent implements OnInit {
    * Tip: See theming Angular Material: https://material.angular.io/guide/theming
    * if you need help applying a global material theme.
    */
-  @Input() public materialTheme: MaterialPrebuiltTheme | undefined = undefined;
+  @Input() public materialTheme?: MaterialPrebuiltTheme;
   /**
    * Display or hide the line numbers in your gist code snippets.
    *

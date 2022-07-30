@@ -16,7 +16,7 @@ import { Component } from '@angular/core';
       <h4>FETCHED GIST (AUTO CACHED FOR 24 HOURS)</h4>
       <p>
         ngx-gist will fetch the gist once and store it locally for 24 hours. In
-        that timeframe if the user returns or visits another page where this
+        that timeframe, if the user returns or visits another page where this
         gist was previously loaded, it will reload the content without having to
         reach out to GitHub again.
       </p>
@@ -50,8 +50,8 @@ import { Component } from '@angular/core';
       <h4>DISPLAYING A BASIC CODE SNIPPET (WITHOUT A REMOTE GIST)</h4>
       <p>
         These are not fetched from GitHub and are brought in elsewhere from your
-        application (seperate HTTP request, or statically for example). With
-        this method you can display code snippets without having to create a
+        application (separate HTTP request, or statically, for example). With
+        this method, you can display code snippets without having to create a
         remote gist. Also, please notice here that no "Open Gist on GitHub" link
         is displayed here.
       </p>
