@@ -9,7 +9,11 @@ export class NgxGistLineNumbersService {
   private isLoaded = false;
 
   public async load(): Promise<void> {
-    if (this.isLoaded) {
+    if (
+      this.isLoaded ||
+      typeof this.document.defaultView?.hljs?.initLineNumbersOnLoad ===
+        'function'
+    ) {
       return;
     }
 
@@ -24,7 +28,7 @@ export class NgxGistLineNumbersService {
         );
       }
 
-      firstValueFrom(this.loadHljsLineNumbersLibrary()).then(() => {
+      await firstValueFrom(this.loadHljsLineNumbersLibrary()).then(() => {
         // The library `highlightjs-line-numbers.js` adds new functions to the
         // `highlight.js` scope on load, so we should now be able to call it
         // without failure.
