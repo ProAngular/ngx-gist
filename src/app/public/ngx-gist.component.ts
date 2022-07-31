@@ -2,13 +2,13 @@ import { NgxGistService } from './ngx-gist.service';
 import { isNonEmptyValue } from './ngx-gist.utilities';
 import { NgxGist } from './ngx-gist.model';
 import { Component, Inject, Input, OnInit } from '@angular/core';
-import { Language } from 'highlight.js';
 import { BehaviorSubject, filter, firstValueFrom, ReplaySubject } from 'rxjs';
 import { UntilDestroy, untilDestroyed } from '@ngneat/until-destroy';
 import { DOCUMENT } from '@angular/common';
 import { NgxGistLineNumbersService } from './ngx-gist-line-numbers.service';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 import {
+  HilightJsTheme,
   MaterialPrebuiltTheme,
   NgxGistThemeService,
 } from './ngx-gist-theme.service';
@@ -27,7 +27,7 @@ import {
           [label]="file.filename"
         >
           <pre>
-            <code 
+            <code
               *ngIf="applyLineNumbers(file.highlightedContent) as content"
               [innerHTML]="content"
             ></code>
@@ -57,14 +57,10 @@ export class NgxGistComponent implements OnInit {
   public constructor(
     @Inject(DOCUMENT) private readonly document: Document,
     private readonly domSanitizer: DomSanitizer,
-    private readonly ngxGistService: NgxGistService,
     private readonly ngxGistLineNumbersService: NgxGistLineNumbersService,
+    private readonly ngxGistService: NgxGistService,
     private readonly ngxGistThemeService: NgxGistThemeService,
   ) {}
-
-  // TODO: Apply HighlightJs code theme.
-  // @Input() public codeTheme?: unknown;
-
   /**
    * Display in the DOM only the selected filename(s) from the gists files array.
    *
@@ -115,15 +111,14 @@ export class NgxGistComponent implements OnInit {
   >(1);
   public readonly gistIdChanges = this.gistIdSubject.asObservable();
   /**
-   * When defined, override automatic language detection [and styling] and
-   * treat all gists as this lanuage.
+   * The `highlight.js` code theme to use and display.
    *
-   * Default: `undefined`
+   * Default: `'default'`
    *
-   * Tip: See supported language strings here:
-   * https://github.com/highlightjs/highlight.js/blob/main/SUPPORTED_LANGUAGES.md
+   * Note: Only _one_ theme can be loaded on a single page at a time! The first
+   * theme to load will apply to all gists on the page.
    */
-  @Input() public languageName?: Language['name'];
+  @Input() public codeTheme: HilightJsTheme = 'default';
   /**
    * Define a material core theme to apply. Ideally, you should already have
    * your global material theme set at the root of your project so try to
@@ -153,12 +148,16 @@ export class NgxGistComponent implements OnInit {
   @Input() public useCache = true;
 
   public async ngOnInit(): Promise<void> {
-    this.setTheme();
+    // Load themes
+    this.setMaterialTheme();
+    this.setHljsTheme();
 
+    // Load line numbers
     if (this.showLineNumbers) {
       await this.ngxGistLineNumbersService.load();
     }
 
+    // Load gist(s) async
     this.gistIdChanges
       .pipe(filter(isNonEmptyValue), untilDestroyed(this))
       .subscribe(async (gistId) => {
@@ -189,11 +188,18 @@ export class NgxGistComponent implements OnInit {
     }
   }
 
-  private setTheme(): void {
+  private setHljsTheme(): void {
+    if (!this.codeTheme) {
+      return;
+    }
+    this.ngxGistThemeService.setTheme({ hilightJsTheme: this.codeTheme });
+  }
+
+  private setMaterialTheme(): void {
     if (!this.materialTheme) {
       return;
     }
-    this.ngxGistThemeService.setTheme(this.materialTheme);
+    this.ngxGistThemeService.setTheme({ materialTheme: this.materialTheme });
   }
 
   public applyLineNumbers(highlightedConent: string): SafeHtml | null {

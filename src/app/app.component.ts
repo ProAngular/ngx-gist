@@ -33,17 +33,32 @@ import { Component } from '@angular/core';
         [useCache]="false"
       ></ngx-gist>
 
+      <h4>SETTING THE CODE STYLE THEME</h4>
+      <p>
+        Select a "highlight.js" code theme to apply. Note: Only one theme can be
+        loaded on a single page at a time! The first theme to load will apply to
+        all gists on the page.
+      </p>
+      <ngx-gist
+        codeTheme="github"
+        gistId="d55ea012b585a16a9970878d90106d74"
+      ></ngx-gist>
+
       <h4>DISPLAYING ONE SPECIFIC FILE</h4>
       <p>Display only one specific file when your gist has many.</p>
       <ngx-gist
-        displayOnlyFileNames="super.js"
+        displayOnlyFileNames="javascript.js"
         gistId="d55ea012b585a16a9970878d90106d74"
       ></ngx-gist>
 
       <h4>DISPLAYING MULTIPLE, SPECIFIC FILES</h4>
       <p>You can also display any number of specific files by name.</p>
       <ngx-gist
-        [displayOnlyFileNames]="['csstest.css', 'main.ts']"
+        [displayOnlyFileNames]="[
+          'markup.html',
+          'typescript.ts',
+          'stylesheet.scss'
+        ]"
         gistId="d55ea012b585a16a9970878d90106d74"
       ></ngx-gist>
 
