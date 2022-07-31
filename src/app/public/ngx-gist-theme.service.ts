@@ -13,7 +13,7 @@ export class NgxGistThemeService {
     hilightJsTheme,
   }: {
     materialTheme?: MaterialPrebuiltTheme;
-    hilightJsTheme?: HilightJsTheme;
+    hilightJsTheme?: HighlightJsTheme;
   } = {}): void {
     if (!materialTheme && !hilightJsTheme) {
       throw new Error('You must provide a theme.');
@@ -72,7 +72,7 @@ export type MaterialPrebuiltTheme =
   | 'pink-bluegrey'
   | 'purple-green';
 
-export type HilightJsTheme =
+export type HighlightJsTheme =
   | 'a11y-dark'
   | 'a11y-light'
   | 'agate'

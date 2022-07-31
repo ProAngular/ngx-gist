@@ -8,7 +8,7 @@ import { DOCUMENT } from '@angular/common';
 import { NgxGistLineNumbersService } from './ngx-gist-line-numbers.service';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 import {
-  HilightJsTheme,
+  HighlightJsTheme,
   MaterialPrebuiltTheme,
   NgxGistThemeService,
 } from './ngx-gist-theme.service';
@@ -118,7 +118,7 @@ export class NgxGistComponent implements OnInit {
    * Note: Only _one_ theme can be loaded on a single page at a time! The first
    * theme to load will apply to all gists on the page.
    */
-  @Input() public codeTheme: HilightJsTheme = 'default';
+  @Input() public codeTheme: HighlightJsTheme = 'default';
   /**
    * Define a material core theme to apply. Ideally, you should already have
    * your global material theme set at the root of your project so try to
