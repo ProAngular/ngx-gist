@@ -11,13 +11,15 @@
 
 [![npm](https://badgen.net/badge/icon/npm?icon=npm&label)](https://github.com/ProAngular/ngx-gist/search?l=typescript)
 [![TypeScript](https://badgen.net/badge/icon/TypeScript?icon=typescript&label)](https://github.com/ProAngular/ngx-gist/search?l=typescript)
-[![npm version](https://badge.fury.io/js/@proangular%2Fngx-gist.svg)](https://badge.fury.io/js/@proangular%2Fngx-gist)
-[![NPM Downloads](https://img.shields.io/amo/dw/@proangular%252Fngx-gist.svg)](https://www.npmjs.com/@proangular/ngx-gist)
+[![npm Version](https://badge.fury.io/js/@proangular%2Fngx-gist.svg)](https://badge.fury.io/js/@proangular%2Fngx-gist)
+[![npm Downloads](https://img.shields.io/amo/dw/@proangular%252Fngx-gist.svg)](https://www.npmjs.com/@proangular/ngx-gist)
 [![Website Status](https://img.shields.io/website?down_color=lightgrey&down_message=Offline&label=Website&up_color=green&up_message=Online&url=https%3A%2F%2Fwww.proangular.com)](https://www.proangular.com)
-[![Join the chat at https://gitter.im/ProAngular/community](https://badges.gitter.im/ProAngular/lobby.svg)](https://gitter.im/ProAngular/community)
-[![Verify and Deploy to GitHub Packages](https://github.com/ProAngular/ngx-gist/actions/workflows/on-merge-main-deploy-gpr.yml/badge.svg)](https://github.com/ProAngular/ngx-gist/actions/workflows/on-merge-main-deploy-gpr.yml)
-[![Verify and Deploy to npmjs](https://github.com/ProAngular/ngx-gist/actions/workflows/on-merge-main-deploy-npmjs.yml/badge.svg)](https://github.com/ProAngular/ngx-gist/actions/workflows/on-merge-main-deploy-npmjs.yml)
-[![npm bundle size (minified + gzip)](https://img.shields.io/bundlephobia/minzip/ProAngular/ngx-gist.svg)](https://bundlephobia.com/result?p=ProAngular/ngx-gist)
+[![Gitter Chat](https://badges.gitter.im/ProAngular/lobby.svg)](https://gitter.im/ProAngular/community)
+[![Discord Chat](https://img.shields.io/discord/1003103094588055552?label=Discord)](https://discord.com/channels/1003103094588055552)
+[![GitHub Package Status](https://github.com/ProAngular/ngx-gist/actions/workflows/on-merge-main-deploy-gpr.yml/badge.svg)](https://github.com/ProAngular/ngx-gist/actions/workflows/on-merge-main-deploy-gpr.yml)
+[![npmjs Package Status](https://github.com/ProAngular/ngx-gist/actions/workflows/on-merge-main-deploy-npmjs.yml/badge.svg)](https://github.com/ProAngular/ngx-gist/actions/workflows/on-merge-main-deploy-npmjs.yml)
+[![Size](https://img.shields.io/bundlephobia/minzip/@proangular/ngx-gist.svg)](https://bundlephobia.com/result?p=ProAngular/ngx-gist)
+[![Sponsors](https://img.shields.io/github/sponsors/proangular?label=Sponsors)](https://github.com/sponsors/ProAngular)
 [![License](https://img.shields.io/npm/l/express.svg?maxAge=2592000)](/LICENSE)
 
 # Information 
@@ -146,7 +148,7 @@ You can also display any number of specific files by name.
 
 ### Displaying a basic code snippet (without a remote gist)
 
-These are not fetched from GitHub and are brought in elsewhere from your application (seperate HTTP request, or statically for example). With this method you can display code snippets without having to create a remote gist. Also, please notice here that no "Open Gist on GitHub" link is displayed here.
+These are not fetched from GitHub and are brought in elsewhere from your application (seperate HTTP request, or statically for example). With this method you can display code snippets without having to create a remote gist. Also, please notice here that no "Open Gist on GitHub" link will display as well.
 ```html
 <ngx-gist [gist]="localGistObject"></ngx-gist>
 ```
@@ -166,7 +168,7 @@ Line numbers are enabled by default, but you can turn them off like so.
 | Input Name               | Input Typing                               | Default Value | Description                                                                                                                                                                                                                                                                    |
 | ------------------------ | ------------------------------------------ | ------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | **displayOnlyFileNames** | `string \| readonly string[] \| undefined` | `undefined`   | Display in the DOM only the selected filename(s) from the gists files array. Can be either a string or string array. File names much match exactly, be sure to remove any leading or trailing whitespace in the provided strings.                                              |
-| **hideGistLink**         | `bool`                                     | `false`       | Optionally hide the gist link which opens the gist on GitHub. The gist links automatically dispaly for remote gists, but can be hidden with this feature.                                                                                                                      |
+| **hideGistLink**         | `bool`                                     | `false`       | Optionally hide the gist link which opens the gist on GitHub. The gist links automatically display for remote gists, but can be hidden with this feature.                                                                                                                      |
 | **gist**                 | `NgxGist \| undefined`                     | `undefined`   | Provide a static gist model here directly which will be displayed if no `gistId` is provided for remote fetching. Also this model will be displayed should a fetch fail when retrieving `gistId`, or overwritten once the pertaining `gistId` data is fetched.                 |
 | **gistId**               | `string`                                   | `undefined`   | Provide the GitHub gist id to be fetched and loaded. This can be found in URL of the gists you create. For example the id `TH1515TH31DT0C0PY` in: https://gist.github.com/YourUserName/TH1515TH31DT0C0PY. Alternatively, provide a value directly in the sibling input `gist`. |
 | **languageName**         | `string \| undefined`                      | `undefined`   | When defined, override automatic language detection [and styling] and treat all gists as this lanuage. See supported language strings here: https://github.com/highlightjs/highlight.js/blob/main/SUPPORTED_LANGUAGES.md                                                       |
@@ -205,8 +207,8 @@ Thank you for any and all contributions!
 # Donation
 
 As a husband and father of four children, your donations mean the world to me! Any donations are greatly appreciated and keep me going!
-* [https://www.paypal.me/CodyTolene](https://www.paypal.me/CodyTolene)
 * [https://github.com/sponsors/ProAngular](https://github.com/sponsors/ProAngular)
+* [https://www.paypal.me/CodyTolene](https://www.paypal.me/CodyTolene)
 
 # License
 
