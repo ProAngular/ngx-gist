@@ -142,15 +142,15 @@ See other `peerDependencies` you may need in the package.json in the root of thi
 1. Provide your gist id into the input `gistId`, or
 2. Provide a direct `NgxGist` mobdel in the input `gist`.
 
-Note: For example your gist id would be `TH1515TH31DT0C0PY` in: 
+Note: For example your gist id would be `TH1515TH3G15T1D` in: 
 
-https://gist.github.com/YourUserName/TH1515TH31DT0C0PY
+https://gist.github.com/YourUserName/TH1515TH3G15T1D
 
 ### Default - fetched gist (auto cached for 24 hours)
 
 ngx-gist will fetch the gist once and store it locally for 24 hours. In that timeframe, if the user returns or visits another page where this gist was previously loaded, it will reload the content without having to reach out to GitHub again.
 ```html
-<ngx-gist gistId="gistId_123abc"></ngx-gist>
+<ngx-gist gistId="TH1515TH3G15T1D"></ngx-gist>
 ```
 
 ### Fetched gist (forced no cache)
@@ -158,7 +158,7 @@ ngx-gist will fetch the gist once and store it locally for 24 hours. In that tim
 Force no cache. This will force ngx-gist to retrieve the content live from GitHub every time this content loads. This is disabled by default, but could be useful if your gists change frequently.
 ```html
 <ngx-gist
-  gistId="gistId_123abc"
+  gistId="TH1515TH3G15T1D"
   [useCache]="false"
 ></ngx-gist>
 ```
@@ -169,7 +169,7 @@ Select a "highlight.js" code theme to apply. Note: Only one theme can be loaded 
 ```html
 <ngx-gist
   codeTheme="github"
-  gistId="gistId_123abc"
+  gistId="TH1515TH3G15T1D"
 ></ngx-gist>
 ```
 
@@ -179,7 +179,7 @@ Display only one specific file when your gist has many.
 ```html
 <ngx-gist
   displayOnlyFileNames="super.js"
-  gistId="gistId_123abc"
+  gistId="TH1515TH3G15T1D"
 ></ngx-gist>
 ```
 
@@ -189,7 +189,7 @@ You can also display any number of specific files by name.
 ```html
 <ngx-gist
   [displayOnlyFileNames]="['csstest.css', 'main.ts']"
-  gistId="gistId_123abc"
+  gistId="TH1515TH3G15T1D"
 ></ngx-gist>
 ```
 
@@ -205,7 +205,7 @@ These are not fetched from GitHub and are brought in elsewhere from your applica
 Line numbers are enabled by default, but you can turn them off like so.
 ```html
 <ngx-gist
-  gistId="d55ea012b585a16a9970878d90106d74"
+  gistId="TH1515TH3G15T1D"
   [showLineNumbers]="false"
 ></ngx-gist>
 ```
@@ -219,7 +219,7 @@ Line numbers are enabled by default, but you can turn them off like so.
 | **codeTheme**            | `HighlightJsTheme` (string)          | `'default'`   | The `highlight.js` code theme to use and display. Note: Only _one_ theme can be loaded on a single page at a time! The first theme to load will apply to all gists on the page.                                                                                                |
 | **displayOnlyFileNames** | `string \| string[] \| undefined`    | `undefined`   | Display in the DOM only the selected filename(s) from the gists files array. Can be either a string or string array. File names much match exactly, be sure to remove any leading or trailing whitespace in the provided strings.                                              |
 | **gist**                 | `NgxGist \| undefined`               | `undefined`   | Provide a static gist model here directly which will be displayed if no `gistId` is provided for remote fetching. Also this model will be displayed should a fetch fail when retrieving `gistId`, or overwritten once the pertaining `gistId` data is fetched.                 |
-| **gistId**               | `string`                             | `undefined`   | Provide the GitHub gist id to be fetched and loaded. This can be found in URL of the gists you create. For example the id `TH1515TH31DT0C0PY` in: https://gist.github.com/YourUserName/TH1515TH31DT0C0PY. Alternatively, provide a value directly in the sibling input `gist`. |
+| **gistId**               | `string`                             | `undefined`   | Provide the GitHub gist id to be fetched and loaded. This can be found in URL of the gists you create. For example the id `TH1515TH3G15T1D` in: https://gist.github.com/YourUserName/TH1515TH3G15T1D. Alternatively, provide a value directly in the sibling input `gist`. |
 | **hideGistLink**         | `bool`                               | `false`       | Optionally hide the gist link which opens the gist on GitHub. The gist links automatically display for remote gists, but can be hidden with this feature.                                                                                                                      |
 | **materialTheme**        | `MaterialPrebuiltTheme \| undefined` | `undefined`   | Define a material core theme to apply. Ideally, you should already have your global material theme set at the root of your project so try to avoid using this if possible. Note: These are loaded from the CDN: `https://unpkg.com`                                            |
 | **showLineNumbers**      | `bool`                               | `true`        | Display or hide the line numbers in your gist code snippets.                                                                                                                                                                                                                   |
