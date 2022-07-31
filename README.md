@@ -9,11 +9,15 @@
   </h1>
 </p>
 
-[![npm](https://badgen.net/badge/icon/npm?icon=npm&label)](https://github.com/ProAngular/ngx-gist/search?l=typescript)
+[![npm](https://badgen.net/badge/icon/npm?icon=npm&label)](https://www.npmjs.com/@proangular/ngx-gist)
+[![GitHub](https://badgen.net/badge/icon/GitHub?icon=github&label)](https://github.com/ProAngular/ngx-gist)
 [![TypeScript](https://badgen.net/badge/icon/TypeScript?icon=typescript&label)](https://github.com/ProAngular/ngx-gist/search?l=typescript)
-[![npm Version](https://badge.fury.io/js/@proangular%2Fngx-gist.svg)](https://badge.fury.io/js/@proangular%2Fngx-gist)
-[![npm Downloads](https://img.shields.io/amo/dw/@proangular%252Fngx-gist.svg)](https://www.npmjs.com/@proangular/ngx-gist)
+[![npm Version](https://badge.fury.io/js/@proangular%2Fngx-gist.svg)](https://www.npmjs.com/@proangular/ngx-gist)
+[![Node Version](https://badgen.net/npm/node/@proangular/ngx-gist)](https://www.npmjs.com/@proangular/ngx-gist)
+[![Package Downloads](https://badgen.net/npm/dw/@proangular/ngx-gist)](https://www.npmjs.com/@proangular/ngx-gist)
 [![Website Status](https://img.shields.io/website?down_color=lightgrey&down_message=Offline&label=Website&up_color=green&up_message=Online&url=https%3A%2F%2Fwww.proangular.com)](https://www.proangular.com)
+[![StackBlitz](https://badgen.net/badge/StackBlitz/Offline/red)]()
+[![Demo](https://badgen.net/badge/Demo/Offline/red)]()
 [![Gitter Chat](https://badges.gitter.im/ProAngular/lobby.svg)](https://gitter.im/ProAngular/community)
 [![Discord Chat](https://img.shields.io/discord/1003103094588055552?label=Discord)](https://discord.com/channels/1003103094588055552)
 [![GitHub Package Status](https://github.com/ProAngular/ngx-gist/actions/workflows/on-merge-main-deploy-gpr.yml/badge.svg)](https://github.com/ProAngular/ngx-gist/actions/workflows/on-merge-main-deploy-gpr.yml)
