@@ -44,7 +44,7 @@ import {
           target="_blank"
           [href]="'https://gist.github.com/' + gid"
         >
-          &#128279; Open Gist on GitHub
+          🔗 Open Gist on GitHub
         </a>
       </mat-card-footer>
 
