@@ -1,6 +1,6 @@
 <p align="center">
   <a href="https://www.ProAngular.com" target="_blank">
-    <img src="https://github.com/ProAngular/ngx-gist/raw/main/src/assets/images/pro-angular-logo.png" />
+    <img src="src/assets/images/pro-angular-logo.png" />
   </a>
   <h1 align="center">
     <a href="https://www.ProAngular.com" target="_blank">
@@ -9,30 +9,72 @@
   </h1>
 </p>
 
-[![npm version](https://badge.fury.io/js/@proangular%2Fngx-gist.svg)](https://badge.fury.io/js/@proangular%2Fngx-gist)
-[![NPM Downloads](https://img.shields.io/amo/dw/@proangular%252Fngx-gist.svg)](https://www.npmjs.com/@proangular/ngx-gist)
-[![Join the chat at https://gitter.im/ProAngular/community](https://badges.gitter.im/ProAngular/lobby.svg)](https://gitter.im/ProAngular/community)
-[![Verify and Deploy to GitHub Packages](https://github.com/ProAngular/ngx-gist/actions/workflows/on-merge-main-deploy-gpr.yml/badge.svg)](https://github.com/ProAngular/ngx-gist/actions/workflows/on-merge-main-deploy-gpr.yml)
-[![Verify and Deploy to npmjs](https://github.com/ProAngular/ngx-gist/actions/workflows/on-merge-main-deploy-npmjs.yml/badge.svg)](https://github.com/ProAngular/ngx-gist/actions/workflows/on-merge-main-deploy-npmjs.yml)
-[![Monthly Downloads](https://img.shields.io/npm/dm/@ProAngular/ngx-gist.svg)](https://www.npmjs.com/package/@proangular/ngx-gist)
-[![npm bundle size (minified + gzip)](https://img.shields.io/bundlephobia/minzip/ProAngular/ngx-gist.svg)](https://bundlephobia.com/result?p=ProAngular/ngx-gist)
+[![npm](https://badgen.net/badge/icon/npm?icon=npm&label)](https://www.npmjs.com/@proangular/ngx-gist)
+[![GitHub](https://badgen.net/badge/icon/GitHub?icon=github&label)](https://github.com/ProAngular/ngx-gist)
+[![TypeScript](https://badgen.net/badge/icon/TypeScript?icon=typescript&label)](https://github.com/ProAngular/ngx-gist/search?l=typescript)
+[![npm Version](https://badge.fury.io/js/@proangular%2Fngx-gist.svg)](https://www.npmjs.com/@proangular/ngx-gist)
+[![Node Version](https://badgen.net/npm/node/@proangular/ngx-gist)](https://www.npmjs.com/@proangular/ngx-gist)
+[![Package Downloads](https://badgen.net/npm/dw/@proangular/ngx-gist)](https://www.npmjs.com/@proangular/ngx-gist)
+[![Size](https://img.shields.io/bundlephobia/minzip/@proangular/ngx-gist.svg)](https://bundlephobia.com/result?p=ProAngular/ngx-gist)
+[![Website Status](https://img.shields.io/website?down_color=lightgrey&down_message=Offline&label=Website&up_color=green&up_message=Online&url=https%3A%2F%2Fwww.proangular.com)](https://www.proangular.com)
+[![Gitter Chat](https://badges.gitter.im/ProAngular/lobby.svg)](https://gitter.im/ProAngular/community)
+[![Discord Chat](https://img.shields.io/discord/1003103094588055552?label=Discord)](https://discord.com/channels/1003103094588055552)
+[![GitHub Package Status](https://github.com/ProAngular/ngx-gist/actions/workflows/on-merge-main-deploy-gpr.yml/badge.svg)](https://github.com/ProAngular/ngx-gist/actions/workflows/on-merge-main-deploy-gpr.yml)
+[![npmjs Package Status](https://github.com/ProAngular/ngx-gist/actions/workflows/on-merge-main-deploy-npmjs.yml/badge.svg)](https://github.com/ProAngular/ngx-gist/actions/workflows/on-merge-main-deploy-npmjs.yml)
+[![Sponsors](https://img.shields.io/github/sponsors/proangular?label=Sponsors)](https://github.com/sponsors/ProAngular)
 [![License](https://img.shields.io/npm/l/express.svg?maxAge=2592000)](/LICENSE)
 
-# Description
+<!--
+[![StackBlitz](https://badgen.net/badge/StackBlitz/Offline/red)]()
+[![Demo](https://badgen.net/badge/Demo/Offline/red)]()
+-->
 
-An Angular Material and HighlighJs styled display box for GitHub gist and local code snippets. All files from the remote/local gist are displayed in separate tabs for users to easily navigate. Many optional features and themes are available. 
+## Table of Contents
+
+- [Information](#information)
+- [Description](#description)
+- [Demo](#demo)
+- [Installation](#installation)
+- [Dependencies](#dependencies)
+- [Usage](#usage)
+- [Component API](#api)
+- [Compatibility](#compatibility)
+- [Issues & Contribution](#development)
+- [Donations](#donations)
+- [License](#license)
+
+<a name="information"/>
+
+## Information 
+
+What is Gist? Gist is an easy method to share snippets or excerpts of data with others. A gist can be a string of code, a bash script or some other small piece of data. These bits of information are hosted by GitHub as a repository.
+
+More info in the following links: 
+* Little Known Ways To Utilize GitHub Gists: https://www.liquidweb.com/kb/little-known-ways-to-utilize-github-gists/
+* GitHub Docs: https://docs.github.com/en/get-started/writing-on-github/editing-and-sharing-content-with-gists/creating-gists
+* Create a gist: https://gist.github.com/
+
+<a name="description"/>
+
+## Description
+
+Behold, this package contains an Angular Material and HighlighJs styled element which displays your GitHub gists in a conveniant, easy to view interface. Don't have a gist? No problem, display your own code snippets by just passing in the same model! All files from the remote/local gist are displayed in separate tabs for users to easily navigate. Many optional features and themes are available. 
+
+GitHub gists can be created here: https://gist.github.com/
 
 Enjoy!
 
-# Demo
+<a name="demo"/>
 
-TODO: Add demo here.
+## Demo
 
-# Requirements
+<p align="center">
+  <img src="src/assets/images/demo-gist.gif" />
+</p>
 
-This project uses Angular Material tabs so Angular Material must be installed and available along with its theme. You can define a theme if you use this application outside of Angular using the public API `materialTheme` (see below for more information). See other peer  dependancies in the package description.
+<a name="installation"/>
 
-# Installation
+## Installation
 
 ```bash
 ng add @proangular/ngx-gist@latest
@@ -55,23 +97,60 @@ Import `NgxGistModule` where needed
   ],
   ...
 })
+export class FeatureModule { }
+```
+
+<a name="dependencies"/>
+
+## Dependencies
+
+### Styling
+
+ You should have an Angular Material theme set up prior to using this, but it's not strictly neccessary. Disabled by default, you can alternatively use the `materialTheme` component input (see API documentation below) to auto load a pre-defined Angular Material theme from a CDN. I don't recommend depending on the CDN or this approach, but I wanted to make it possible for you. It's also possible to use this without an angular theme and style it yourself entirely!
+
+More information on theming Angular Material: https://material.angular.io/guide/theming
+
+### Core Packages
+
+Depending on how your project is set up, you may also need the following imports either in your `FeatureModule` for example or your root module (generally these are already imported in `AppModule` or similar, they are common features of Angular). These dependencies are needed for animating the Angular Material tabs click transition and making an HTTP request to GitHub to retrieve the remote gist information.
+
+Try using `ngx-gist` before importing these, you'll know if you need them if you get a console error in the browser.
+
+```diff
+...
++ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
++ import { HttpClientModule } from '@angular/common/http';
+...
+
+@NgModule({
+  imports: [
+    ...
++   BrowserAnimationsModule,
++   HttpClientModule,
+  ],
+  ...
+})
 export class AppModule { }
 ```
 
-# Usage
+See other `peerDependencies` you may need in the package.json in the root of this project.
+
+<a name="usage"/>
+
+## Usage
 
 1. Provide your gist id into the input `gistId`, or
 2. Provide a direct `NgxGist` mobdel in the input `gist`.
 
-Note: For example your gist id would be `TH1515th31DT0C0PY` in: 
+Note: For example your gist id would be `TH1515TH3G15T1D` in: 
 
-https://gist.github.com/YourUserName/TH1515th31DT0C0PY
+https://gist.github.com/YourUserName/TH1515TH3G15T1D
 
 ### Default - fetched gist (auto cached for 24 hours)
 
 ngx-gist will fetch the gist once and store it locally for 24 hours. In that timeframe, if the user returns or visits another page where this gist was previously loaded, it will reload the content without having to reach out to GitHub again.
 ```html
-<ngx-gist gistId="gistId_123abc"></ngx-gist>
+<ngx-gist gistId="TH1515TH3G15T1D"></ngx-gist>
 ```
 
 ### Fetched gist (forced no cache)
@@ -79,8 +158,18 @@ ngx-gist will fetch the gist once and store it locally for 24 hours. In that tim
 Force no cache. This will force ngx-gist to retrieve the content live from GitHub every time this content loads. This is disabled by default, but could be useful if your gists change frequently.
 ```html
 <ngx-gist
-  gistId="gistId_123abc"
+  gistId="TH1515TH3G15T1D"
   [useCache]="false"
+></ngx-gist>
+```
+
+### Setting the code style theme
+
+Select a "highlight.js" code theme to apply. Note: Only one theme can be loaded on a single page at a time! The first theme to load will apply to all gists on the page.
+```html
+<ngx-gist
+  codeTheme="github"
+  gistId="TH1515TH3G15T1D"
 ></ngx-gist>
 ```
 
@@ -90,7 +179,7 @@ Display only one specific file when your gist has many.
 ```html
 <ngx-gist
   displayOnlyFileNames="super.js"
-  gistId="gistId_123abc"
+  gistId="TH1515TH3G15T1D"
 ></ngx-gist>
 ```
 
@@ -100,13 +189,13 @@ You can also display any number of specific files by name.
 ```html
 <ngx-gist
   [displayOnlyFileNames]="['csstest.css', 'main.ts']"
-  gistId="gistId_123abc"
+  gistId="TH1515TH3G15T1D"
 ></ngx-gist>
 ```
 
 ### Displaying a basic code snippet (without a remote gist)
 
-These are not fetched from GitHub and are brought in elsewhere from your application (seperate HTTP request, or statically for example). With this method you can display code snippets without having to create a remote gist. Also, please notice here that no "Open Gist on GitHub" link is displayed here.
+These are not fetched from GitHub and are brought in elsewhere from your application (seperate HTTP request, or statically for example). With this method you can display code snippets without having to create a remote gist. Also, please notice here that no "Open Gist on GitHub" link will display as well.
 ```html
 <ngx-gist [gist]="localGistObject"></ngx-gist>
 ```
@@ -116,25 +205,29 @@ These are not fetched from GitHub and are brought in elsewhere from your applica
 Line numbers are enabled by default, but you can turn them off like so.
 ```html
 <ngx-gist
-  gistId="d55ea012b585a16a9970878d90106d74"
+  gistId="TH1515TH3G15T1D"
   [showLineNumbers]="false"
 ></ngx-gist>
 ```
 
-# Component API
+<a name="api"/>
 
-| Input Name               | Input Typing                               | Default Value | Description                                                                                                                                                                                                                                                                    |
-| ------------------------ | ------------------------------------------ | ------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| **displayOnlyFileNames** | `string \| readonly string[] \| undefined` | `undefined`   | Display in the DOM only the selected filename(s) from the gists files array. Can be either a string or string array. File names much match exactly, be sure to remove any leading or trailing whitespace in the provided strings.                                              |
-| **hideGistLink**         | `bool`                                     | `false`       | Optionally hide the gist link which opens the gist on GitHub. The gist links automatically dispaly for remote gists, but can be hidden with this feature.                                                                                                                      |
-| **gist**                 | `NgxGist \| undefined`                     | `undefined`   | Provide a static gist model here directly which will be displayed if no `gistId` is provided for remote fetching. Also this model will be displayed should a fetch fail when retrieving `gistId`, or overwritten once the pertaining `gistId` data is fetched.                 |
-| **gistId**               | `string`                                   | `undefined`   | Provide the GitHub gist id to be fetched and loaded. This can be found in URL of the gists you create. For example the id `TH1515th31DT0C0PY` in: https://gist.github.com/YourUserName/TH1515th31DT0C0PY. Alternatively, provide a value directly in the sibling input `gist`. |
-| **languageName**         | `string \| undefined`                      | `undefined`   | When defined, override automatic language detection [and styling] and treat all gists as this lanuage. See supported language strings here: https://github.com/highlightjs/highlight.js/blob/main/SUPPORTED_LANGUAGES.md                                                       |
-| **materialTheme**        | `MaterialPrebuiltTheme \| undefined`       | `undefined`   | Define a material core theme to apply. Ideally, you should already have your global material theme set at the root of your project so try to avoid using this if possible. Note: These are loaded from the CDN: `https://unpkg.com`                                            |
-| **showLineNumbers**      | `bool`                                     | `true`        | Display or hide the line numbers in your gist code snippets.                                                                                                                                                                                                                   |
-| **useCache**             | `bool`                                     | `true`        | Cache the GitHub gist request in local memory for 24 hours. GitHub has a request limit, so this helps in reducing bandwidth. Loads previously fetched gist content from the users machine on refresh and page re-visits.                                                       |
+## Component API
 
-# Compatibility
+| Input Name               | Input Typing                         | Default Value | Description                                                                                                                                                                                                                                                                    |
+| ------------------------ | ------------------------------------ | ------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| **codeTheme**            | `HighlightJsTheme` (string)          | `'default'`   | The `highlight.js` code theme to use and display. Note: Only _one_ theme can be loaded on a single page at a time! The first theme to load will apply to all gists on the page.                                                                                                |
+| **displayOnlyFileNames** | `string \| string[] \| undefined`    | `undefined`   | Display in the DOM only the selected filename(s) from the gists files array. Can be either a string or string array. File names much match exactly, be sure to remove any leading or trailing whitespace in the provided strings.                                              |
+| **gist**                 | `NgxGist \| undefined`               | `undefined`   | Provide a static gist model here directly which will be displayed if no `gistId` is provided for remote fetching. Also this model will be displayed should a fetch fail when retrieving `gistId`, or overwritten once the pertaining `gistId` data is fetched.                 |
+| **gistId**               | `string`                             | `undefined`   | Provide the GitHub gist id to be fetched and loaded. This can be found in URL of the gists you create. For example the id `TH1515TH3G15T1D` in: https://gist.github.com/YourUserName/TH1515TH3G15T1D. Alternatively, provide a value directly in the sibling input `gist`. |
+| **hideGistLink**         | `bool`                               | `false`       | Optionally hide the gist link which opens the gist on GitHub. The gist links automatically display for remote gists, but can be hidden with this feature.                                                                                                                      |
+| **materialTheme**        | `MaterialPrebuiltTheme \| undefined` | `undefined`   | Define a material core theme to apply. Ideally, you should already have your global material theme set at the root of your project so try to avoid using this if possible. Note: These are loaded from the CDN: `https://unpkg.com`                                            |
+| **showLineNumbers**      | `bool`                               | `true`        | Display or hide the line numbers in your gist code snippets.                                                                                                                                                                                                                   |
+| **useCache**             | `bool`                               | `true`        | Cache the GitHub gist request in local memory for 24 hours. GitHub has a request limit, so this helps in reducing bandwidth. Loads previously fetched gist content from the users machine on refresh and page re-visits.                                                       |
+
+<a name="compatibility"/>
+
+## Compatibility
 
 | Angular version | @proangular/ngx-gist       | Install                              |
 | --------------- | -------------------------- | ------------------------------------ |
@@ -142,7 +235,9 @@ Line numbers are enabled by default, but you can turn them off like so.
 | v13             | v1.x.x                     | `ng add @proangular/ngx-gist@latest` |
 | v12             | v1.x.x                     | `ng add @proangular/ngx-gist@latest` |
 
-# Development
+<a name="development"/>
+
+## Issues & Contribution
 
 Please submit all issues, and feature requests here: [https://github.com/ProAngular/ngx-gist/issues](https://github.com/ProAngular/ngx-gist/issues)
 
@@ -162,13 +257,17 @@ Contribution:
 
 Thank you for any and all contributions!
 
-# Donation
+<a name="donations"/>
+
+## Donation
 
 As a husband and father of four children, your donations mean the world to me! Any donations are greatly appreciated and keep me going!
-* [https://www.paypal.me/CodyTolene](https://www.paypal.me/CodyTolene)
 * [https://github.com/sponsors/ProAngular](https://github.com/sponsors/ProAngular)
+* [https://www.paypal.me/CodyTolene](https://www.paypal.me/CodyTolene)
 
-# License
+<a name="license"/>
+
+## License
 
 Copyright &copy; 2022 [Cody Tolene](https://www.CodyTolene.com)
 
