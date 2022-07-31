@@ -9,24 +9,16 @@
   </h1>
 </p>
 
-<!-- BADGE: TYPESCRIPT -->
-[![TypeScript](https://badgen.net/badge/icon/TypeScript?icon=typescript&label)](https://github.com/ProAngular/ngx-gist/search?l=typescript)
-<!-- BADGE: NPM -->
-[![npm](https://badgen.net/badge/icon/npm?icon=npm&label)](https://github.com/ProAngular/ngx-gist/search?l=typescript)
-<!-- BADGE: PACKAGE VERSION -->
-[![npm version](https://badge.fury.io/js/@proangular%2Fngx-gist.svg)](https://badge.fury.io/js/@proangular%2Fngx-gist)
-<!-- BADGE: DOWNLOADS -->
-[![NPM Downloads](https://img.shields.io/amo/dw/@proangular%252Fngx-gist.svg)](https://www.npmjs.com/@proangular/ngx-gist)
-<!-- BADGE: GITTER CHAT -->
-[![Join the chat at https://gitter.im/ProAngular/community](https://badges.gitter.im/ProAngular/lobby.svg)](https://gitter.im/ProAngular/community)
-<!-- BADGE: GITHUB PACKAGES DEPLOY STATUS -->
-[![Verify and Deploy to GitHub Packages](https://github.com/ProAngular/ngx-gist/actions/workflows/on-merge-main-deploy-gpr.yml/badge.svg)](https://github.com/ProAngular/ngx-gist/actions/workflows/on-merge-main-deploy-gpr.yml)
-<!-- BADGE: NPMJS PACKAGES DEPLOY STATUS -->
-[![Verify and Deploy to npmjs](https://github.com/ProAngular/ngx-gist/actions/workflows/on-merge-main-deploy-npmjs.yml/badge.svg)](https://github.com/ProAngular/ngx-gist/actions/workflows/on-merge-main-deploy-npmjs.yml)
-<!-- BADGE: PACKAGE SIZE -->
-[![npm bundle size (minified + gzip)](https://img.shields.io/bundlephobia/minzip/ProAngular/ngx-gist.svg)](https://bundlephobia.com/result?p=ProAngular/ngx-gist)
-<!-- BADGE: LICENSE -->
-[![License](https://img.shields.io/npm/l/express.svg?maxAge=2592000)](/LICENSE)
+<!-- BADGE: NPM -->[![npm](https://badgen.net/badge/icon/npm?icon=npm&label)](https://github.com/ProAngular/ngx-gist/search?l=typescript)
+<!-- BADGE: TYPESCRIPT -->[![TypeScript](https://badgen.net/badge/icon/TypeScript?icon=typescript&label)](https://github.com/ProAngular/ngx-gist/search?l=typescript)
+<!-- BADGE: PACKAGE VERSION -->[![npm version](https://badge.fury.io/js/@proangular%2Fngx-gist.svg)](https://badge.fury.io/js/@proangular%2Fngx-gist)
+<!-- BADGE: DOWNLOADS -->[![NPM Downloads](https://img.shields.io/amo/dw/@proangular%252Fngx-gist.svg)](https://www.npmjs.com/@proangular/ngx-gist)
+<!-- BADGE: WEBSITE -->[![Website Status](https://img.shields.io/website?down_color=lightgrey&down_message=Offline&label=Website&up_color=green&up_message=Online&url=https%3A%2F%2Fwww.proangular.com)](https://www.proangular.com)
+<!-- BADGE: GITTER CHAT -->[![Join the chat at https://gitter.im/ProAngular/community](https://badges.gitter.im/ProAngular/lobby.svg)](https://gitter.im/ProAngular/community)
+<!-- BADGE: GITHUB PACKAGES DEPLOY STATUS -->[![Verify and Deploy to GitHub Packages](https://github.com/ProAngular/ngx-gist/actions/workflows/on-merge-main-deploy-gpr.yml/badge.svg)](https://github.com/ProAngular/ngx-gist/actions/workflows/on-merge-main-deploy-gpr.yml)
+<!-- BADGE: NPMJS PACKAGES DEPLOY STATUS -->[![Verify and Deploy to npmjs](https://github.com/ProAngular/ngx-gist/actions/workflows/on-merge-main-deploy-npmjs.yml/badge.svg)](https://github.com/ProAngular/ngx-gist/actions/workflows/on-merge-main-deploy-npmjs.yml)
+<!-- BADGE: PACKAGE SIZE -->[![npm bundle size (minified + gzip)](https://img.shields.io/bundlephobia/minzip/ProAngular/ngx-gist.svg)](https://bundlephobia.com/result?p=ProAngular/ngx-gist)
+<!-- BADGE: LICENSE -->[![License](https://img.shields.io/npm/l/express.svg?maxAge=2592000)](/LICENSE)
 
 # Information 
 
