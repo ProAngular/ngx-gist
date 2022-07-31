@@ -31,7 +31,6 @@ export class NgxGistThemeService {
     const hljsThemeLinkEl = this.document.getElementById(hljsThemeId);
     if (hljsThemeLinkEl && hilightJsTheme === 'default' && !materialTheme) {
       // Default theme already in use, return.
-      console.log('returned');
       return;
     } else if (
       hljsThemeLinkEl &&
@@ -39,10 +38,8 @@ export class NgxGistThemeService {
       !materialTheme
     ) {
       // Override previously used theme, but remove it first.
-      console.log('remove');
       this.document.head.removeChild(hljsThemeLinkEl);
     }
-    console.log('info: ', materialTheme, hilightJsTheme);
     if (materialTheme) {
       // !!! Update version when needed.
       const version = '14.1.0';
@@ -53,7 +50,6 @@ export class NgxGistThemeService {
       this.importElMaterialTheme.id = materialThemeId;
       this.document.head.appendChild(this.importElMaterialTheme);
     } else if (hilightJsTheme) {
-      console.log('apply', hilightJsTheme);
       // !!! Update version when needed.
       const version = '11.6.0';
       const url = `highlight.js@${version}/styles/${hilightJsTheme}.css`;

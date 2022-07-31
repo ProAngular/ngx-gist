@@ -36,7 +36,7 @@ export class NgxGistLineNumbersService {
         this.document.defaultView?.hljs?.initLineNumbersOnLoad!();
       });
     } catch (e: unknown) {
-      console.log(e);
+      console.error(e);
     } finally {
       this.isLoaded = true;
     }
