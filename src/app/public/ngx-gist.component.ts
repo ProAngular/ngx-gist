@@ -113,12 +113,12 @@ export class NgxGistComponent implements OnInit {
   /**
    * The `highlight.js` code theme to use and display.
    *
-   * Default: `'default'`
+   * Default: `undefined`
    *
    * Note: Only _one_ theme can be loaded on a single page at a time! The first
    * theme to load will apply to all gists on the page.
    */
-  @Input() public codeTheme: HighlightJsTheme = 'default';
+  @Input() public codeTheme?: HighlightJsTheme;
   /**
    * Define a material core theme to apply. Ideally, you should already have
    * your global material theme set at the root of your project so try to
