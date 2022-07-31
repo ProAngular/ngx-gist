@@ -3,7 +3,7 @@
 // It's wise to import a prebuilt Material theme or custom theme at the root of
 // your project when using `@proangular/ngx-gist`.
 
-@import "~@angular/material/prebuilt-themes/deeppurple-amber.css";
+@import "@angular/material/prebuilt-themes/deeppurple-amber.css";
 
 /* Alternative pre-built themes.
 @import "~@angular/material/prebuilt-themes/deeppurple-amber.css";
@@ -18,4 +18,5 @@ body {
   background-color: #faf9f6;
 }
 
-@import "~highlight.js/styles/github.css";
+// Use this to apply a `highlight.js` theme globally
+// @import "highlight.js/styles/github.css";

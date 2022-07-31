@@ -19,10 +19,10 @@
 [![Website Status](https://img.shields.io/website?down_color=lightgrey&down_message=Offline&label=Website&up_color=green&up_message=Online&url=https%3A%2F%2Fwww.proangular.com)](https://www.proangular.com)
 [![Gitter Chat](https://badges.gitter.im/ProAngular/lobby.svg)](https://gitter.im/ProAngular/community)
 [![Discord Chat](https://img.shields.io/discord/1003103094588055552?label=Discord)](https://discord.com/channels/1003103094588055552)
-[![GitHub Package Status](https://github.com/ProAngular/ngx-gist/actions/workflows/on-merge-main-deploy-gpr.yml/badge.svg)](https://github.com/ProAngular/ngx-gist/actions/workflows/on-merge-main-deploy-gpr.yml)
-[![npmjs Package Status](https://github.com/ProAngular/ngx-gist/actions/workflows/on-merge-main-deploy-npmjs.yml/badge.svg)](https://github.com/ProAngular/ngx-gist/actions/workflows/on-merge-main-deploy-npmjs.yml)
 [![Sponsors](https://img.shields.io/github/sponsors/proangular?label=Sponsors)](https://github.com/sponsors/ProAngular)
 [![License](https://img.shields.io/npm/l/express.svg?maxAge=2592000)](/LICENSE)
+[![GitHub Package Status](https://github.com/ProAngular/ngx-gist/actions/workflows/on-merge-main-deploy-gpr.yml/badge.svg)](https://github.com/ProAngular/ngx-gist/actions/workflows/on-merge-main-deploy-gpr.yml)
+[![npmjs Package Status](https://github.com/ProAngular/ngx-gist/actions/workflows/on-merge-main-deploy-npmjs.yml/badge.svg)](https://github.com/ProAngular/ngx-gist/actions/workflows/on-merge-main-deploy-npmjs.yml)
 
 <!--
 [![StackBlitz](https://badgen.net/badge/StackBlitz/Offline/red)]()
@@ -104,11 +104,29 @@ export class FeatureModule { }
 
 ## Dependencies
 
-### Styling
+### Styling UX - Angular Material
 
  You should have an Angular Material theme set up prior to using this, but it's not strictly neccessary. Disabled by default, you can alternatively use the `materialTheme` component input (see API documentation below) to auto load a pre-defined Angular Material theme from a CDN. I don't recommend depending on the CDN or this approach, but I wanted to make it possible for you. It's also possible to use this without an angular theme and style it yourself entirely!
 
 More information on theming Angular Material: https://material.angular.io/guide/theming
+
+### Styling UX Code Snippets - Highlight.js
+
+You can pass in any theme name (string, excluding the file extension ".css") to the input `codeTheme` on _any_ `ngx-gist` element on a single page which will apply the theme to that pages gists.
+
+You can find the available styles here: https://unpkg.com/browse/highlight.js@11.6.0/styles/
+
+Alternatively if you only want to use one style across the whole project or just apply to specific features, I recommend importing the styles directly. To do this install the `highlight.js` package and apply the style. Example below:
+
+```bash
+npm install highlight.js --save
+```
+
+```diff
+...
++ @import "highlight.js/styles/github.css";
+...
+```
 
 ### Core Packages
 

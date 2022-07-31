@@ -5,7 +5,9 @@ import { Component } from '@angular/core';
   template: `
     <footer [style.height]="height + 'px'">
       <a href="https://www.ProAngular.com" target="_blank">
-        <img src="assets/images/pro-angular-logo.png" />
+        <img
+          src="https://www.proangular.com/assets/images/pro-angular-logo-large.png"
+        />
       </a>
       <p>
         Copyright &copy; Pro Angular 2022
