@@ -19,10 +19,10 @@
 [![Website Status](https://img.shields.io/website?down_color=lightgrey&down_message=Offline&label=Website&up_color=green&up_message=Online&url=https%3A%2F%2Fwww.proangular.com)](https://www.proangular.com)
 [![Gitter Chat](https://badges.gitter.im/ProAngular/lobby.svg)](https://gitter.im/ProAngular/community)
 [![Discord Chat](https://img.shields.io/discord/1003103094588055552?label=Discord)](https://discord.com/channels/1003103094588055552)
-[![GitHub Package Status](https://github.com/ProAngular/ngx-gist/actions/workflows/on-merge-main-deploy-gpr.yml/badge.svg)](https://github.com/ProAngular/ngx-gist/actions/workflows/on-merge-main-deploy-gpr.yml)
-[![npmjs Package Status](https://github.com/ProAngular/ngx-gist/actions/workflows/on-merge-main-deploy-npmjs.yml/badge.svg)](https://github.com/ProAngular/ngx-gist/actions/workflows/on-merge-main-deploy-npmjs.yml)
 [![Sponsors](https://img.shields.io/github/sponsors/proangular?label=Sponsors)](https://github.com/sponsors/ProAngular)
 [![License](https://img.shields.io/npm/l/express.svg?maxAge=2592000)](/LICENSE)
+[![GitHub Package Status](https://github.com/ProAngular/ngx-gist/actions/workflows/on-merge-main-deploy-gpr.yml/badge.svg)](https://github.com/ProAngular/ngx-gist/actions/workflows/on-merge-main-deploy-gpr.yml)
+[![npmjs Package Status](https://github.com/ProAngular/ngx-gist/actions/workflows/on-merge-main-deploy-npmjs.yml/badge.svg)](https://github.com/ProAngular/ngx-gist/actions/workflows/on-merge-main-deploy-npmjs.yml)
 
 <!--
 [![StackBlitz](https://badgen.net/badge/StackBlitz/Offline/red)]()
@@ -104,11 +104,29 @@ export class FeatureModule { }
 
 ## Dependencies
 
-### Styling
+### Styling UX - Angular Material
 
  You should have an Angular Material theme set up prior to using this, but it's not strictly neccessary. Disabled by default, you can alternatively use the `materialTheme` component input (see API documentation below) to auto load a pre-defined Angular Material theme from a CDN. I don't recommend depending on the CDN or this approach, but I wanted to make it possible for you. It's also possible to use this without an angular theme and style it yourself entirely!
 
 More information on theming Angular Material: https://material.angular.io/guide/theming
+
+### Styling UX Code Snippets - Highlight.js
+
+You can pass in any theme name (string, excluding the file extension ".css") to the input `codeTheme` on _any_ `ngx-gist` element on a single page which will apply the theme to that pages gists.
+
+You can find the available styles here: https://unpkg.com/browse/highlight.js@11.6.0/styles/
+
+Alternatively if you only want to use one style across the whole project or just apply to specific features, I recommend importing the styles directly. To do this install the `highlight.js` package and apply the style. Example below:
+
+```bash
+npm install highlight.js --save
+```
+
+```diff
+...
++ @import "highlight.js/styles/github.css";
+...
+```
 
 ### Core Packages
 
@@ -216,10 +234,10 @@ Line numbers are enabled by default, but you can turn them off like so.
 
 | Input Name               | Input Typing                         | Default Value | Description                                                                                                                                                                                                                                                                    |
 | ------------------------ | ------------------------------------ | ------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| **codeTheme**            | `HighlightJsTheme` (string)          | `'default'`   | The `highlight.js` code theme to use and display. Note: Only _one_ theme can be loaded on a single page at a time! The first theme to load will apply to all gists on the page.                                                                                                |
+| **codeTheme**            | `HighlightJsTheme \| undefined`      | `undefined`   | The `highlight.js` code theme to use and display. Note: Only _one_ theme can be loaded on a single page at a time! The first theme to load will apply to all gists on the page. Available themes here: https://unpkg.com/browse/highlight.js@11.6.0/styles/                    |
 | **displayOnlyFileNames** | `string \| string[] \| undefined`    | `undefined`   | Display in the DOM only the selected filename(s) from the gists files array. Can be either a string or string array. File names much match exactly, be sure to remove any leading or trailing whitespace in the provided strings.                                              |
 | **gist**                 | `NgxGist \| undefined`               | `undefined`   | Provide a static gist model here directly which will be displayed if no `gistId` is provided for remote fetching. Also this model will be displayed should a fetch fail when retrieving `gistId`, or overwritten once the pertaining `gistId` data is fetched.                 |
-| **gistId**               | `string`                             | `undefined`   | Provide the GitHub gist id to be fetched and loaded. This can be found in URL of the gists you create. For example the id `TH1515TH3G15T1D` in: https://gist.github.com/YourUserName/TH1515TH3G15T1D. Alternatively, provide a value directly in the sibling input `gist`. |
+| **gistId**               | `string`                             | `undefined`   | Provide the GitHub gist id to be fetched and loaded. This can be found in URL of the gists you create. For example the id `TH1515TH3G15T1D` in: https://gist.github.com/YourUserName/TH1515TH3G15T1D. Alternatively, provide a value directly in the sibling input `gist`.     |
 | **hideGistLink**         | `bool`                               | `false`       | Optionally hide the gist link which opens the gist on GitHub. The gist links automatically display for remote gists, but can be hidden with this feature.                                                                                                                      |
 | **materialTheme**        | `MaterialPrebuiltTheme \| undefined` | `undefined`   | Define a material core theme to apply. Ideally, you should already have your global material theme set at the root of your project so try to avoid using this if possible. Note: These are loaded from the CDN: `https://unpkg.com`                                            |
 | **showLineNumbers**      | `bool`                               | `true`        | Display or hide the line numbers in your gist code snippets.                                                                                                                                                                                                                   |

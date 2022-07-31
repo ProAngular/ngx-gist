@@ -6,7 +6,9 @@ import { Component } from '@angular/core';
     <mat-toolbar class="mat-elevation-z6">
       <mat-toolbar-row>
         <a class="logo" href="https://www.ProAngular.com" target="_blank">
-          <img src="assets/images/pro-angular-logo-full.png" />
+          <img
+            src="https://www.proangular.com/assets/images/pro-angular-logo-full.png"
+          />
         </a>
         <div class="github-link-container">
           <a
@@ -14,7 +16,10 @@ import { Component } from '@angular/core';
             aria-label="GitHub Repo"
             target="_blank"
           >
-            <img class="git-hub" src="assets/images/git-hub.svg" />
+            <img
+              class="git-hub"
+              src="https://www.proangular.com/assets/images/git-hub.svg"
+            />
           </a>
         </div>
       </mat-toolbar-row>
