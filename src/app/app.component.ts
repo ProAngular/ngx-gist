@@ -65,10 +65,11 @@ import { Component } from '@angular/core';
       <h4>DISPLAYING A BASIC CODE SNIPPET (WITHOUT A REMOTE GIST)</h4>
       <p>
         These are not fetched from GitHub and are brought in elsewhere from your
-        application (separate HTTP request, or statically, for example). With
-        this method, you can display code snippets without having to create a
-        remote gist. Also, please notice here that no "Open Gist on GitHub" link
-        is displayed here.
+        application (seperate HTTP request, or statically for example). With
+        this method you can display code snippets without having to create a
+        remote gist. You can easily create a new code snippet/gist object using
+        <code>NgxGist.create({{ '{' }} ... {{ '}' }})</code>. Note: no "Open
+        Gist on GitHub" link will display.
       </p>
       <ngx-gist [gist]="localGistObject"></ngx-gist>
 

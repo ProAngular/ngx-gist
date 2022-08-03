@@ -16,6 +16,7 @@
 [![Node Version](https://badgen.net/npm/node/@proangular/ngx-gist)](https://www.npmjs.com/@proangular/ngx-gist)
 [![Package Downloads](https://badgen.net/npm/dw/@proangular/ngx-gist)](https://www.npmjs.com/@proangular/ngx-gist)
 [![Size](https://img.shields.io/bundlephobia/minzip/@proangular/ngx-gist.svg)](https://bundlephobia.com/result?p=ProAngular/ngx-gist)
+[![Demo Status](https://badgen.net/badge/Demo/Online/green)](https://www.ProAngular.com/demos/ngx-gist)
 [![Website Status](https://img.shields.io/website?down_color=lightgrey&down_message=Offline&label=Website&up_color=green&up_message=Online&url=https%3A%2F%2Fwww.proangular.com)](https://www.proangular.com)
 [![Gitter Chat](https://badges.gitter.im/ProAngular/lobby.svg)](https://gitter.im/ProAngular/community)
 [![Discord Chat](https://img.shields.io/discord/1003103094588055552?label=Discord)](https://discord.com/channels/1003103094588055552)
@@ -23,11 +24,6 @@
 [![License](https://img.shields.io/npm/l/express.svg?maxAge=2592000)](/LICENSE)
 [![GitHub Package Status](https://github.com/ProAngular/ngx-gist/actions/workflows/on-merge-main-deploy-gpr.yml/badge.svg)](https://github.com/ProAngular/ngx-gist/actions/workflows/on-merge-main-deploy-gpr.yml)
 [![npmjs Package Status](https://github.com/ProAngular/ngx-gist/actions/workflows/on-merge-main-deploy-npmjs.yml/badge.svg)](https://github.com/ProAngular/ngx-gist/actions/workflows/on-merge-main-deploy-npmjs.yml)
-
-<!--
-[![StackBlitz](https://badgen.net/badge/StackBlitz/Offline/red)]()
-[![Demo](https://badgen.net/badge/Demo/Offline/red)]()
--->
 
 ## Table of Contents
 
@@ -58,7 +54,7 @@ More info in the following links:
 
 ## Description
 
-Behold, this package contains an Angular Material and HighlighJs styled element which displays your GitHub gists in a conveniant, easy to view interface. Don't have a gist? No problem, display your own code snippets by just passing in the same model! All files from the remote/local gist are displayed in separate tabs for users to easily navigate. Many optional features and themes are available. 
+Behold, this package contains an Angular Material and HighlighJs styled element which displays your GitHub gists in a conveniant, easy to view interface. Don't have a gist? No problem, display your own code snippets by just passing in a direct model (`NgxGist.create({ ... })`)! All files from the remote/local gist are displayed in separate tabs for users to easily navigate. Many optional features and themes are available. 
 
 GitHub gists can be created here: https://gist.github.com/
 
@@ -71,6 +67,8 @@ Enjoy!
 <p align="center">
   <img src="src/assets/images/demo-gist.gif" />
 </p>
+
+Live demo here: [https://www.ProAngular.com/demos/ngx-gist](https://www.ProAngular.com/demos/ngx-gist)
 
 <a name="installation"/>
 
@@ -213,7 +211,7 @@ You can also display any number of specific files by name.
 
 ### Displaying a basic code snippet (without a remote gist)
 
-These are not fetched from GitHub and are brought in elsewhere from your application (seperate HTTP request, or statically for example). With this method you can display code snippets without having to create a remote gist. Also, please notice here that no "Open Gist on GitHub" link will display as well.
+These are not fetched from GitHub and are brought in elsewhere from your application (seperate HTTP request, or statically for example). With this method you can display code snippets without having to create a remote gist. You can easily create a new code snippet/gist object using `NgxGist.create({ ... })`. Note: no "Open Gist on GitHub" link will display.
 ```html
 <ngx-gist [gist]="localGistObject"></ngx-gist>
 ```
