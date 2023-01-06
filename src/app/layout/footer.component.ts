@@ -38,6 +38,11 @@ import { Component } from '@angular/core';
         align-content: center;
         justify-content: center;
         align-items: center;
+        overflow: hidden;
+
+        > a > img {
+          max-width: 200px;
+        }
       }
     `,
   ],
