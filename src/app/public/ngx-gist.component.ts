@@ -22,7 +22,7 @@ import {
         <mat-tab
           *ngFor="
             let file of gist.highlightedFiles
-              | gistFileFilter : displayOnlyFileNames
+              | gistFileFilter: displayOnlyFileNames
           "
           [label]="file.filename"
         >
