@@ -1,6 +1,6 @@
 {
   "name": "@proangular/ngx-gist",
-  "version": "1.3.0",
+  "version": "1.3.1",
   "description": "An Angular Material and HighlighJs styled display box for GitHub gist and local code snippets.",
   "author": "Pro Angular <webmaster@proangular.com>",
   "homepage": "https://www.proangular.com",
@@ -30,10 +30,10 @@
     "@angular/core": "^17.3.10",
     "@angular/material": "^17.3.10",
     "@angular/platform-browser": "^17.3.10",
-    "@ngneat/until-destroy": "^9.2.1",
-    "highlight.js": "^11.6.0",
+    "@ngneat/until-destroy": "^10.0.0",
+    "highlight.js": "^11.9.0",
     "highlightjs-line-numbers.js": "^2.8.0",
-    "io-ts": "^2.2.17",
+    "io-ts": "^2.2.21",
     "io-ts-types": "^0.5.16"
   },
   "devDependencies": {
