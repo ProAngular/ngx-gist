@@ -6,7 +6,7 @@ import { Component } from '@angular/core';
   template: `
     <ngx-header></ngx-header>
     <ngx-body>
-      <h2 align="center">@proangular/ngx-gist</h2>
+      <h2 align="center">&#64;proangular/ngx-gist</h2>
       <h3 align="center">
         Examples of displaying local and GitHub gists and code snippets.
       </h3>

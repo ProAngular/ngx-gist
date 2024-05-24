@@ -247,8 +247,9 @@ Line numbers are enabled by default, but you can turn them off like so.
 
 | Angular version | @proangular/ngx-gist       | Install                              |
 | --------------- | -------------------------- | ------------------------------------ |
-| v16             | v1.2.x                     | `ng add @proangular/ngx-gist@latest` |
-| v15             | v1.1.x                     | `ng add @proangular/ngx-gist@1.1.0` |
+| v17             | v1.3.x                     | `ng add @proangular/ngx-gist@latest` |
+| v16             | v1.2.x                     | `ng add @proangular/ngx-gist@1.2.0`  |
+| v15             | v1.1.x                     | `ng add @proangular/ngx-gist@1.1.0`  |
 | v14             | v1.0.x                     | `ng add @proangular/ngx-gist@1.0.8`  |
 | v13             | v1.0.x                     | `ng add @proangular/ngx-gist@1.0.8`  |
 | v12             | v1.0.x                     | `ng add @proangular/ngx-gist@1.0.8`  |
