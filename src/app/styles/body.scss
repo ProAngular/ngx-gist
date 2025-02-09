@@ -1,0 +1,10 @@
+@use 'variables' as var;
+
+body {
+  background-color: white;
+  font-family: var.$default-font-family;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}

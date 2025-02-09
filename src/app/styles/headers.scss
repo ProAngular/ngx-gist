@@ -1,0 +1,35 @@
+@use 'variables' as var;
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var.$default-font-family;
+  font-weight: 600;
+}
+
+h1 {
+  font-size: var.$font-xxl;
+}
+
+h2 {
+  font-size: var.$font-xl;
+}
+
+h3 {
+  font-size: var.$font-lg;
+}
+
+h4 {
+  font-size: var.$font-md;
+}
+
+h5 {
+  font-size: var.$font-sm;
+}
+
+h6 {
+  font-size: var.$font-xs;
+}

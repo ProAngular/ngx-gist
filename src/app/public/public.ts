@@ -1,9 +1,3 @@
-/** Public API Exports for Node Package */
-
-export {
-  HighlightJsTheme,
-  MaterialPrebuiltTheme,
-} from './ngx-gist-theme.service';
-export * from './ngx-gist.component';
-export * from './ngx-gist.model';
-export * from './ngx-gist.module';
+export type { HighlightJsTheme } from './ngx-gist-theme.service';
+export { NgxGistComponent } from './ngx-gist.component';
+export { NgxGist, gistCodec } from './ngx-gist.model';

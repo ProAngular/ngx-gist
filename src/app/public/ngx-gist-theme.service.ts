@@ -5,68 +5,32 @@ import { DOCUMENT } from '@angular/common';
 export class NgxGistThemeService {
   public constructor(@Inject(DOCUMENT) private readonly document: Document) {}
 
-  private importElMaterialTheme: HTMLLinkElement | null = null;
   private importElHljsTheme: HTMLLinkElement | null = null;
 
-  public setTheme({
-    materialTheme,
-    hilightJsTheme,
-  }: {
-    materialTheme?: MaterialPrebuiltTheme;
-    hilightJsTheme?: HighlightJsTheme;
-  } = {}): void {
-    if (!materialTheme && !hilightJsTheme) {
-      throw new Error('You must provide a theme.');
-    }
-
-    const materialThemeId = 'material-theme-import';
+  public setTheme(hilightJsTheme: HighlightJsTheme): void {
     const hljsThemeId = 'hljs-theme-import';
-
-    const materialThemeLinkEl = this.document.getElementById(materialThemeId);
-    if (materialThemeLinkEl && !hilightJsTheme) {
-      // Material theme aleady exists, return.
-      return;
-    }
-
     const hljsThemeLinkEl = this.document.getElementById(hljsThemeId);
-    if (hljsThemeLinkEl && hilightJsTheme === 'default' && !materialTheme) {
+
+    if (hljsThemeLinkEl && hilightJsTheme === 'default') {
       // Default theme already in use, return.
       return;
     } else if (
       hljsThemeLinkEl &&
-      hilightJsTheme !== 'default' &&
-      !materialTheme
+      hilightJsTheme !== 'default'
     ) {
       // Override previously used theme, but remove it first.
       this.document.head.removeChild(hljsThemeLinkEl);
     }
-    if (materialTheme) {
-      // !!! Update version when needed.
-      const version = '14.1.0';
-      const url = `@angular/material@${version}/prebuilt-themes/${materialTheme}.css`;
-      this.importElMaterialTheme = this.document.createElement('link');
-      this.importElMaterialTheme.href = `https://unpkg.com/${url}`;
-      this.importElMaterialTheme.rel = 'stylesheet';
-      this.importElMaterialTheme.id = materialThemeId;
-      this.document.head.appendChild(this.importElMaterialTheme);
-    } else if (hilightJsTheme) {
-      // !!! Update version when needed.
-      const version = '11.6.0';
-      const url = `highlight.js@${version}/styles/${hilightJsTheme}.css`;
-      this.importElHljsTheme = this.document.createElement('link');
-      this.importElHljsTheme.href = `https://unpkg.com/${url}`;
-      this.importElHljsTheme.rel = 'stylesheet';
-      this.importElHljsTheme.id = hljsThemeId;
-      this.document.head.appendChild(this.importElHljsTheme);
-    }
+
+    const version = '11.11.1'; // Update with version!
+    const url = `highlight.js@${version}/styles/${hilightJsTheme}.css`;
+    this.importElHljsTheme = this.document.createElement('link');
+    this.importElHljsTheme.href = `https://unpkg.com/${url}`;
+    this.importElHljsTheme.rel = 'stylesheet';
+    this.importElHljsTheme.id = hljsThemeId;
+    this.document.head.appendChild(this.importElHljsTheme);
   }
 }
-
-export type MaterialPrebuiltTheme =
-  | 'deeppurple-amber'
-  | 'indigo-pink'
-  | 'pink-bluegrey'
-  | 'purple-green';
 
 export type HighlightJsTheme =
   | 'a11y-dark'

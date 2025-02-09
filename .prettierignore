@@ -1,8 +1,14 @@
-# Ignore everything...
+# Ignore everything
 /*
 
-# Except these files and directories:
+# Make sure production files are ignored
+dist/
+public/
+
+# Do not ignore the following files
 !.github/
-!.husky/
-!e2e/src
 !src/
+!README.md
+
+# Re-ignore sub-directories from the above exempt directories:
+.github/CODEOWNERS
