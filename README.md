@@ -1,6 +1,6 @@
 <p align="center">
   <a href="https://www.ProAngular.com" target="_blank">
-    <img src="src/assets/images/pro-angular-logo.png" />
+    <img src="public/images/pro-angular-logo.png" />
   </a>
   <h1 align="center">
     <a href="https://www.ProAngular.com" target="_blank">
@@ -94,7 +94,7 @@ Enjoy!
 ## Demo <a name="demo"></a>
 
 <p align="center">
-  <img src="src/assets/images/demo-gist.gif" />
+  <img src="public/images/demo-gist.gif" />
 </p>
 
 Live demo here:
