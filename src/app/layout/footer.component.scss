@@ -1,0 +1,25 @@
+@use '../styles/variables' as var;
+
+:host {
+  display: block;
+  margin-top: var.$header-height;
+}
+
+footer {
+  align-content: center;
+  align-items: center;
+  background-color: #1775d1;
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  height: 420px;
+  justify-content: center;
+  overflow: hidden;
+  text-align: center;
+  width: 100%;
+
+  > a > img {
+    max-width: 200px;
+  }
+}

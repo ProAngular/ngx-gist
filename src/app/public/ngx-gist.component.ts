@@ -1,57 +1,35 @@
-import { NgxGistService } from './ngx-gist.service';
-import { isNonEmptyValue } from './ngx-gist.utilities';
-import { NgxGist } from './ngx-gist.model';
-import { Component, Inject, Input, OnInit } from '@angular/core';
 import { BehaviorSubject, filter, firstValueFrom, ReplaySubject } from 'rxjs';
-import { UntilDestroy, untilDestroyed } from '@ngneat/until-destroy';
-import { DOCUMENT } from '@angular/common';
-import { NgxGistLineNumbersService } from './ngx-gist-line-numbers.service';
+import { ChangeDetectionStrategy, Component, Inject, Input, OnInit } from '@angular/core';
+import { CommonModule, DOCUMENT } from '@angular/common';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
-import {
-  HighlightJsTheme,
-  MaterialPrebuiltTheme,
-  NgxGistThemeService,
-} from './ngx-gist-theme.service';
+import { GistFileFilterPipe } from './ngx-gist-file-filter.pipe';
+import { HighlightJsTheme, NgxGistThemeService } from './ngx-gist-theme.service';
+import { MatCardModule } from '@angular/material/card';
+import { MatTabsModule } from '@angular/material/tabs';
+import { NgxGist } from './ngx-gist.model';
+import { NgxGistLineNumbersService } from './ngx-gist-line-numbers.service';
+import { NgxGistService } from './ngx-gist.service';
+import { UntilDestroy, untilDestroyed } from '@ngneat/until-destroy';
+import { isNonEmptyValue } from './ngx-gist.utilities';
 
 @UntilDestroy()
 @Component({
   selector: 'ngx-gist',
-  template: `
-    <mat-card class="code-container">
-      <mat-tab-group *ngIf="gistChanges | async as gist; else loading">
-        <mat-tab
-          *ngFor="
-            let file of gist.highlightedFiles
-              | gistFileFilter: displayOnlyFileNames
-          "
-          [label]="file.filename"
-        >
-          <pre>
-            <code
-              *ngIf="applyLineNumbers(file.highlightedContent) as content"
-              [innerHTML]="content"
-            ></code>
-            <ng-template #error>
-              <code>Error loading code...</code>
-            </ng-template>
-          </pre>
-        </mat-tab>
-      </mat-tab-group>
-
-      <mat-card-footer *ngIf="gistIdChanges | async as gid">
-        <a
-          *ngIf="!hideGistLink"
-          target="_blank"
-          [href]="'https://gist.github.com/' + gid"
-        >
-          🔗 Open Gist on GitHub
-        </a>
-      </mat-card-footer>
-
-      <ng-template #loading>Loading Code Snippet...</ng-template>
-    </mat-card>
-  `,
-  styleUrls: ['./ngx-gist.component.scss'],
+  templateUrl: './ngx-gist.component.html',
+  styleUrl: './ngx-gist.component.scss',
+  standalone: true,
+  imports: [
+      CommonModule,
+      GistFileFilterPipe,
+      MatCardModule,
+      MatTabsModule,
+  ],
+  providers: [
+    NgxGistLineNumbersService,
+    NgxGistService,
+    NgxGistThemeService,
+  ],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class NgxGistComponent implements OnInit {
   public constructor(
@@ -120,19 +98,6 @@ export class NgxGistComponent implements OnInit {
    */
   @Input() public codeTheme?: HighlightJsTheme;
   /**
-   * Define a material core theme to apply. Ideally, you should already have
-   * your global material theme set at the root of your project so try to
-   * avoid using this if possible.
-   *
-   * Note: These are loaded from the CDN: `https://unpkg.com`
-   *
-   * Default: `undefined`
-   *
-   * Tip: See theming Angular Material: https://material.angular.io/guide/theming
-   * if you need help applying a global material theme.
-   */
-  @Input() public materialTheme?: MaterialPrebuiltTheme;
-  /**
    * Display or hide the line numbers in your gist code snippets.
    *
    * Default: `true`
@@ -148,8 +113,7 @@ export class NgxGistComponent implements OnInit {
   @Input() public useCache = true;
 
   public async ngOnInit(): Promise<void> {
-    // Load themes
-    this.setMaterialTheme();
+    // Load theme
     this.setHljsTheme();
 
     // Load line numbers
@@ -192,14 +156,7 @@ export class NgxGistComponent implements OnInit {
     if (!this.codeTheme) {
       return;
     }
-    this.ngxGistThemeService.setTheme({ hilightJsTheme: this.codeTheme });
-  }
-
-  private setMaterialTheme(): void {
-    if (!this.materialTheme) {
-      return;
-    }
-    this.ngxGistThemeService.setTheme({ materialTheme: this.materialTheme });
+    this.ngxGistThemeService.setTheme(this.codeTheme);
   }
 
   public applyLineNumbers(highlightedConent: string): SafeHtml | null {

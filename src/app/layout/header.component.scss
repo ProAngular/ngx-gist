@@ -1,0 +1,35 @@
+@use '../styles/variables' as var;
+
+:host,
+mat-toolbar {
+  background-color: #1775d1;
+  height: var.$header-height;
+  left: 0;
+  padding: 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+img {
+  height: 40px;
+}
+
+div {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: 100%;
+  min-width: 6.5rem;
+  height: 100%;
+  margin-right: 1rem;
+  position: relative;
+  margin: 0;
+
+  > a {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+  }
+}

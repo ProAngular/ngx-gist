@@ -1,7 +1,7 @@
 import { DOCUMENT } from '@angular/common';
 import { Inject, Injectable } from '@angular/core';
 import hljs, { HLJSApi } from 'highlight.js';
-import { filter, map, Observable, firstValueFrom, from } from 'rxjs';
+import { defaultIfEmpty, filter, map, Observable, firstValueFrom, from } from 'rxjs';
 
 @Injectable({ providedIn: 'root' }) // Must be a singleton
 export class NgxGistLineNumbersService {
@@ -11,55 +11,50 @@ export class NgxGistLineNumbersService {
   public async load(): Promise<void> {
     if (
       this.isLoaded ||
-      typeof this.document.defaultView?.hljs?.initLineNumbersOnLoad ===
-        'function'
+      typeof this.document.defaultView?.hljs?.initLineNumbersOnLoad === 'function'
     ) {
       return;
     }
 
     try {
       if (this.document.defaultView) {
-        // Ensure hljs is available before we load the dependant library
-        // `highlightjs-line-numbers.js` dynamically as a js import.
+        // Ensure hljs is available before we load the dependent library
         this.document.defaultView.hljs = hljs;
       } else {
-        throw new Error(
-          `Unable to access default view to apply "highlight.js" package.`,
-        );
+        throw new Error(`Unable to access default view to apply "highlight.js" package.`);
       }
 
-      await firstValueFrom(this.loadHljsLineNumbersLibrary()).then(() => {
-        // The library `highlightjs-line-numbers.js` adds new functions to the
-        // `highlight.js` scope on load, so we should now be able to call it
-        // without failure.
-        // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-        this.document.defaultView?.hljs?.initLineNumbersOnLoad!();
-      });
-    } catch (e: unknown) {
+      const result = await firstValueFrom(this.loadHljsLineNumbersLibrary());
+      if (result) {
+        this.document.defaultView?.hljs?.initLineNumbersOnLoad?.();
+      }
+    } catch (e) {
       console.error(e);
     } finally {
       this.isLoaded = true;
     }
   }
 
-  /* eslint-disable @typescript-eslint/no-explicit-any */
-  private loadHljsLineNumbersLibrary(): Observable<any> {
-    return from(import('highlightjs-line-numbers.js' as any)).pipe(
-      filter((module: any) => !!module && !!module.default),
-      map((module: any) => module.default),
+  private loadHljsLineNumbersLibrary(): Observable<unknown> {
+    return from(import('highlightjs-line-numbers.js' as const)).pipe(
+      map((module) => module?.default), // Optional chaining makes it cleaner
+      filter(Boolean), // `Boolean` acts as a filter to remove falsy values
+      defaultIfEmpty(null)
     );
   }
-  /* eslint-enable @typescript-eslint/no-explicit-any */
+}
+
+interface HljsLineNumbersOptions {
+  singleLine?: boolean;
+  startFrom?: number;
 }
 
 declare global {
   interface Window {
     hljs?: HLJSApi & {
-      /* eslint-disable @typescript-eslint/no-explicit-any */
-      initLineNumbersOnLoad?: (options?: any) => void;
-      lineNumbersBlock?: (value: Element, options?: any) => void;
-      lineNumbersValue?: (value: string, options?: any) => string;
-      /* eslint-enable @typescript-eslint/no-explicit-any */
+      initLineNumbersOnLoad?: (options?: HljsLineNumbersOptions) => void;
+      lineNumbersBlock?: (value: Element, options?: HljsLineNumbersOptions) => void;
+      lineNumbersValue?: (value: string, options?: HljsLineNumbersOptions) => string;
     };
   }
 }
