@@ -94,7 +94,11 @@ Enjoy!
 ## Demo <a name="demo"></a>
 
 <p align="center">
+<<<<<<< HEAD
   <img src="https://raw.githubusercontent.com/ProAngular/ngx-gist/refs/heads/main/public/images/demo-gist.gif" />
+=======
+  <img src="public/images/demo-gist.gif" />
+>>>>>>> main
 </p>
 
 Live demo here:
