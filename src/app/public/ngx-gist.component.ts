@@ -1,6 +1,6 @@
 import { BehaviorSubject, filter, firstValueFrom, ReplaySubject } from 'rxjs';
-import { ChangeDetectionStrategy, Component, Inject, Input, OnInit } from '@angular/core';
-import { CommonModule, DOCUMENT } from '@angular/common';
+import { ChangeDetectionStrategy, Component, Inject, Input, OnInit, DOCUMENT } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 import { GistFileFilterPipe } from './ngx-gist-file-filter.pipe';
 import { HighlightJsTheme, NgxGistThemeService } from './ngx-gist-theme.service';

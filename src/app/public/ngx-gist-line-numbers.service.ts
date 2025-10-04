@@ -1,5 +1,5 @@
-import { DOCUMENT } from '@angular/common';
-import { Inject, Injectable } from '@angular/core';
+
+import { Inject, Injectable, DOCUMENT } from '@angular/core';
 import hljs, { HLJSApi } from 'highlight.js';
 import { defaultIfEmpty, filter, map, Observable, firstValueFrom, from } from 'rxjs';
 
