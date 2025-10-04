@@ -303,6 +303,7 @@ Line numbers are enabled by default, but you can turn them off like so.
 
 | Angular version | @proangular/ngx-gist | Install                               |
 | --------------- | -------------------- | ------------------------------------- |
+| v20             | v20.x.0              | `ng add @proangular/ngx-gist@^20.0.0` |
 | v19             | v19.x.0              | `ng add @proangular/ngx-gist@^19.0.0` |
 | v18             | ------               | Untested                              |
 | v17             | v1.3.x               | `ng add @proangular/ngx-gist@~1.3.0`  |
