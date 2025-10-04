@@ -1,6 +1,6 @@
 <p align="center">
   <a href="https://www.ProAngular.com" target="_blank">
-    <img src="public/images/pro-angular-logo.png" />
+    <img src="https://raw.githubusercontent.com/ProAngular/ngx-gist/refs/heads/main/public/images/pro-angular-logo.png" />
   </a>
   <h1 align="center">
     <a href="https://www.ProAngular.com" target="_blank">
@@ -94,7 +94,7 @@ Enjoy!
 ## Demo <a name="demo"></a>
 
 <p align="center">
-  <img src="public/images/demo-gist.gif" />
+  <img src="https://raw.githubusercontent.com/ProAngular/ngx-gist/refs/heads/main/public/images/demo-gist.gif" />
 </p>
 
 Live demo here:
