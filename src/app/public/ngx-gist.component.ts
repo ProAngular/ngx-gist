@@ -1,5 +1,5 @@
 import { BehaviorSubject, filter, firstValueFrom, ReplaySubject } from 'rxjs';
-import { ChangeDetectionStrategy, Component, Inject, Input, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input, OnInit, inject } from '@angular/core';
 import { CommonModule, DOCUMENT } from '@angular/common';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 import { GistFileFilterPipe } from './ngx-gist-file-filter.pipe';
@@ -32,13 +32,12 @@ import { isNonEmptyValue } from './ngx-gist.utilities';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class NgxGistComponent implements OnInit {
-  public constructor(
-    @Inject(DOCUMENT) private readonly document: Document,
-    private readonly domSanitizer: DomSanitizer,
-    private readonly ngxGistLineNumbersService: NgxGistLineNumbersService,
-    private readonly ngxGistService: NgxGistService,
-    private readonly ngxGistThemeService: NgxGistThemeService,
-  ) {}
+  private readonly document: Document = inject(DOCUMENT);
+  private readonly domSanitizer = inject(DomSanitizer);
+  private readonly ngxGistLineNumbersService = inject(NgxGistLineNumbersService);
+  private readonly ngxGistService = inject(NgxGistService);
+  private readonly ngxGistThemeService = inject(NgxGistThemeService);
+
   /**
    * Display in the DOM only the selected filename(s) from the gists files array.
    *

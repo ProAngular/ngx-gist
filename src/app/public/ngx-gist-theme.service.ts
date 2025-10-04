@@ -1,9 +1,9 @@
-import { Inject, Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 import { DOCUMENT } from '@angular/common';
 
 @Injectable({ providedIn: 'root' }) // Must be a singleton
 export class NgxGistThemeService {
-  public constructor(@Inject(DOCUMENT) private readonly document: Document) {}
+  private readonly document: Document = inject(DOCUMENT);
 
   private importElHljsTheme: HTMLLinkElement | null = null;
 

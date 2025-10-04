@@ -1,31 +1,40 @@
 <mat-card class="code-container">
-  <mat-tab-group *ngIf="gistChanges | async as gist; else loading">
-    <mat-tab
-      *ngFor="
-        let file of gist.highlightedFiles
-          | gistFileFilter: displayOnlyFileNames
-      "
-      [label]="file.filename"
-    >
-      <pre>
-        <code
-          *ngIf="applyLineNumbers(file.highlightedContent) as content"
-          [innerHTML]="content"
-        ></code>
-        <ng-template #error>
-          <code>Error loading code...</code>
-        </ng-template>
-      </pre>
-    </mat-tab>
-  </mat-tab-group>
-  <mat-card-footer *ngIf="gistIdChanges | async as gid">
-    <a
-      *ngIf="!hideGistLink"
-      target="_blank"
-      [href]="'https://gist.github.com/' + gid"
-    >
-      🔗 Open Gist on GitHub
-    </a>
-  </mat-card-footer>
-  <ng-template #loading>Loading Code Snippet...</ng-template>
+  @if (gistChanges | async; as gist) {
+    <mat-tab-group>
+      @for (
+        file of gist.highlightedFiles
+        | gistFileFilter: displayOnlyFileNames
+        ; track
+        file) {
+        <mat-tab
+          [label]="file.filename"
+          >
+          <pre>
+            @if (applyLineNumbers(file.highlightedContent); as content) {
+              <code
+                [innerHTML]="content"
+              ></code>
+            }
+            <ng-template #error>
+              <code>Error loading code...</code>
+            </ng-template>
+          </pre>
+        </mat-tab>
+      }
+    </mat-tab-group>
+  } @else {
+    Loading Code Snippet...
+  }
+  @if (gistIdChanges | async; as gid) {
+    <mat-card-footer>
+      @if (!hideGistLink) {
+        <a
+          target="_blank"
+          [href]="'https://gist.github.com/' + gid"
+          >
+          🔗 Open Gist on GitHub
+        </a>
+      }
+    </mat-card-footer>
+  }
 </mat-card>
