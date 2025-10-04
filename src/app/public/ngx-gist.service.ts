@@ -1,5 +1,5 @@
 import { gistCodec, NgxGist } from './ngx-gist.model';
-import { Injectable } from '@angular/core';
+import { inject, Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { catchError, map, Observable, of } from 'rxjs';
 import {
@@ -11,7 +11,7 @@ import * as io from 'io-ts';
 
 @Injectable()
 export class NgxGistService {
-  public constructor(private readonly httpClient: HttpClient) {}
+  private readonly httpClient = inject(HttpClient);
 
   private readonly delimiter = '||';
 

@@ -1,11 +1,13 @@
 
-import { Inject, Injectable, DOCUMENT } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
+import { DOCUMENT } from '@angular/common';
 import hljs, { HLJSApi } from 'highlight.js';
 import { defaultIfEmpty, filter, map, Observable, firstValueFrom, from } from 'rxjs';
 
 @Injectable({ providedIn: 'root' }) // Must be a singleton
 export class NgxGistLineNumbersService {
-  public constructor(@Inject(DOCUMENT) private readonly document: Document) {}
+  private readonly document: Document = inject(DOCUMENT);
+  
   private isLoaded = false;
 
   public async load(): Promise<void> {
