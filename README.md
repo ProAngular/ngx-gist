@@ -1,13 +1,17 @@
-<p align="center">
+<div align="center">
   <a href="https://www.ProAngular.com" target="_blank">
     <img src="https://raw.githubusercontent.com/ProAngular/ngx-gist/refs/heads/main/public/images/pro-angular-logo.png" />
   </a>
   <h1 align="center">
-    <a href="https://www.ProAngular.com" target="_blank">
-      Pro Angular
-    </a>: GitHub Gist Code Snippet Viewer
+    <a href="https://www.ProAngular.com" target="_blank">Pro Angular</a>: ngx-gist
   </h1>
-</p>
+  <a align="center" href="https://github.com/ProAngular/ngx-gist" target="_blank">
+    View Github Repository
+  </a>
+  <p align="center">
+    An Angular Material and HighlighJs styled display box for GitHub gist and local code snippets.
+  </p>
+</div>
 
 <!---------------------------------------------------------------------------->
 <!---------------------------------------------------------------------------->
@@ -297,17 +301,17 @@ Line numbers are enabled by default, but you can turn them off like so.
 
 ## Compatibility <a name="compatibility"></a>
 
-| Angular version | @proangular/ngx-gist | Install                               |
-| --------------- | -------------------- | ------------------------------------- |
-| v20             | v20.x.0              | `ng add @proangular/ngx-gist@^20.0.0` |
-| v19             | v19.x.0              | `ng add @proangular/ngx-gist@^19.0.0` |
-| v18             | ------               | Untested                              |
-| v17             | v1.3.x               | `ng add @proangular/ngx-gist@~1.3.0`  |
-| v16             | v1.2.x               | `ng add @proangular/ngx-gist@~1.2.0`  |
-| v15             | v1.1.x               | `ng add @proangular/ngx-gist@~1.1.0`  |
-| v14             | v1.0.x               | `ng add @proangular/ngx-gist@~1.0.8`  |
-| v13             | v1.0.x               | `ng add @proangular/ngx-gist@~1.0.8`  |
-| v12             | v1.0.x               | `ng add @proangular/ngx-gist@~1.0.8`  |
+| Angular version | @proangular/ngx-gist | Install                              |
+| --------------- | -------------------- | ------------------------------------ |
+| v20             | v20.x                | `ng add @proangular/ngx-gist@^20`    |
+| v19             | v19.x                | `ng add @proangular/ngx-gist@^19`    |
+| v18             | ------               | Untested                             |
+| v17             | v1.3.x               | `ng add @proangular/ngx-gist@~1.3.0` |
+| v16             | v1.2.x               | `ng add @proangular/ngx-gist@~1.2.0` |
+| v15             | v1.1.x               | `ng add @proangular/ngx-gist@~1.1.0` |
+| v14             | v1.0.x               | `ng add @proangular/ngx-gist@~1.0.8` |
+| v13             | v1.0.x               | `ng add @proangular/ngx-gist@~1.0.8` |
+| v12             | v1.0.x               | `ng add @proangular/ngx-gist@~1.0.8` |
 
 <p align="right">[ <a href="#index">Index</a> ]</p>
 
@@ -369,12 +373,12 @@ Thank you to the entire Angular team and community for such a great framework to
 build upon. If you have any questions, please let me know by opening an issue
 [here][url-new-issue].
 
-| Type                                                                      | Info                                                           |
-| :------------------------------------------------------------------------ | :------------------------------------------------------------- |
-| <img width="48" src=".github/images/ng-icons/email.svg" />                | webmaster@codytolene.com                                       |
-| <img width="48" src=".github/images/simple-icons/github.svg" />           | https://github.com/sponsors/CodyTolene                         |
-| <img width="48" src=".github/images/simple-icons/buymeacoffee.svg" />     | https://www.buymeacoffee.com/codytolene                        |
-| <img width="48" src=".github/images/simple-icons/bitcoin-btc-logo.svg" /> | bc1qfx3lvspkj0q077u3gnrnxqkqwyvcku2nml86wmudy7yf2u8edmqq0a5vnt |
+| Type                                                                                                                                            | Info                                                           |
+| :---------------------------------------------------------------------------------------------------------------------------------------------- | :------------------------------------------------------------- |
+| <img width="48" src="https://raw.githubusercontent.com/ProAngular/ngx-gist/refs/heads/main/.github/images/ng-icons/email.svg" />                | webmaster@codytolene.com                                       |
+| <img width="48" src="https://raw.githubusercontent.com/ProAngular/ngx-gist/refs/heads/main/.github/images/simple-icons/github.svg" />           | https://github.com/sponsors/CodyTolene                         |
+| <img width="48" src="https://raw.githubusercontent.com/ProAngular/ngx-gist/refs/heads/main/.github/images/simple-icons/buymeacoffee.svg" />     | https://www.buymeacoffee.com/codytolene                        |
+| <img width="48" src="https://raw.githubusercontent.com/ProAngular/ngx-gist/refs/heads/main/.github/images/simple-icons/bitcoin-btc-logo.svg" /> | bc1qfx3lvspkj0q077u3gnrnxqkqwyvcku2nml86wmudy7yf2u8edmqq0a5vnt |
 
 Fin. Happy programming friend!
 

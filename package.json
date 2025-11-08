@@ -1,6 +1,6 @@
 {
   "name": "@proangular/ngx-gist",
-  "version": "20.3.5",
+  "version": "20.3.6",
   "description": "An Angular Material and HighlighJs styled display box for GitHub gist and local code snippets.",
   "author": "Pro Angular <webmaster@proangular.com>",
   "homepage": "https://www.proangular.com",
