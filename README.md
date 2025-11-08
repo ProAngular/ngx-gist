@@ -6,7 +6,7 @@
     <a href="https://www.ProAngular.com" target="_blank">Pro Angular</a>: ngx-gist
   </h1>
   <a align="center" href="https://github.com/ProAngular/ngx-gist" target="_blank">
-    View Github Repository
+    View GitHub Repository
   </a>
   <p align="center">
     An Angular Material and HighlighJs styled display box for GitHub gist and local code snippets.
@@ -78,12 +78,12 @@ More info in the following links:
 
 ## Description <a name="description"></a>
 
-Behold, this package contains an Angular Material and HighlighJs styled element
-which displays your GitHub gists in a conveniant, easy to view interface. Don't
-have a gist? No problem, display your own code snippets by just passing in a
-direct model (`NgxGist.create({ ... })`)! All files from the remote/local gist
-are displayed in separate tabs for users to easily navigate. Many optional
-features and themes are available.
+Behold, this package contains an Angular Material and Highlight.js styled
+element which displays your GitHub gists in a conveniant, easy to view
+interface. Don't have a gist? No problem, display your own code snippets by just
+passing in a direct model (`NgxGist.create({ ... })`)! All files from the
+remote/local gist are displayed in separate tabs for users to easily navigate.
+Many optional features and themes are available.
 
 GitHub gists can be created here: https://gist.github.com/
 
