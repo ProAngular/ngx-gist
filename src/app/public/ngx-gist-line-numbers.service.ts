@@ -1,19 +1,27 @@
-
-import { Injectable, inject } from '@angular/core';
-import { DOCUMENT } from '@angular/common';
 import hljs, { HLJSApi } from 'highlight.js';
-import { defaultIfEmpty, filter, map, Observable, firstValueFrom, from } from 'rxjs';
+import {
+  Observable,
+  defaultIfEmpty,
+  filter,
+  firstValueFrom,
+  from,
+  map,
+} from 'rxjs';
+
+import { DOCUMENT } from '@angular/common';
+import { Injectable, inject } from '@angular/core';
 
 @Injectable({ providedIn: 'root' }) // Must be a singleton
 export class NgxGistLineNumbersService {
   private readonly document: Document = inject(DOCUMENT);
-  
+
   private isLoaded = false;
 
   public async load(): Promise<void> {
     if (
       this.isLoaded ||
-      typeof this.document.defaultView?.hljs?.initLineNumbersOnLoad === 'function'
+      typeof this.document.defaultView?.hljs?.initLineNumbersOnLoad ===
+        'function'
     ) {
       return;
     }
@@ -23,7 +31,9 @@ export class NgxGistLineNumbersService {
         // Ensure hljs is available before we load the dependent library
         this.document.defaultView.hljs = hljs;
       } else {
-        throw new Error(`Unable to access default view to apply "highlight.js" package.`);
+        throw new Error(
+          `Unable to access default view to apply "highlight.js" package.`,
+        );
       }
 
       const result = await firstValueFrom(this.loadHljsLineNumbersLibrary());
@@ -41,7 +51,7 @@ export class NgxGistLineNumbersService {
     return from(import('highlightjs-line-numbers.js' as const)).pipe(
       map((module) => module?.default), // Optional chaining makes it cleaner
       filter(Boolean), // `Boolean` acts as a filter to remove falsy values
-      defaultIfEmpty(null)
+      defaultIfEmpty(null),
     );
   }
 }
@@ -55,8 +65,14 @@ declare global {
   interface Window {
     hljs?: HLJSApi & {
       initLineNumbersOnLoad?: (options?: HljsLineNumbersOptions) => void;
-      lineNumbersBlock?: (value: Element, options?: HljsLineNumbersOptions) => void;
-      lineNumbersValue?: (value: string, options?: HljsLineNumbersOptions) => string;
+      lineNumbersBlock?: (
+        value: Element,
+        options?: HljsLineNumbersOptions,
+      ) => void;
+      lineNumbersValue?: (
+        value: string,
+        options?: HljsLineNumbersOptions,
+      ) => string;
     };
   }
 }

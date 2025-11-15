@@ -2,13 +2,10 @@
   @if (gistChanges | async; as gist) {
     <mat-tab-group>
       @for (
-        file of gist.highlightedFiles
-        | gistFileFilter: displayOnlyFileNames
-        ; track
-        file) {
-        <mat-tab
-          [label]="file.filename"
-          >
+        file of gist.highlightedFiles | gistFileFilter: displayOnlyFileNames;
+        track file
+      ) {
+        <mat-tab [label]="file.filename">
           <pre>
             @if (applyLineNumbers(file.highlightedContent); as content) {
               <code
@@ -28,10 +25,7 @@
   @if (gistIdChanges | async; as gid) {
     <mat-card-footer>
       @if (!hideGistLink) {
-        <a
-          target="_blank"
-          [href]="'https://gist.github.com/' + gid"
-          >
+        <a target="_blank" [href]="'https://gist.github.com/' + gid">
           🔗 Open Gist on GitHub
         </a>
       }

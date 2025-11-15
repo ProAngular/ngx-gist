@@ -1,13 +1,15 @@
-import { gistCodec, NgxGist } from './ngx-gist.model';
-import { inject, Injectable } from '@angular/core';
+import * as io from 'io-ts';
+import { Observable, catchError, map, of } from 'rxjs';
+
 import { HttpClient } from '@angular/common/http';
-import { catchError, map, Observable, of } from 'rxjs';
+import { Injectable, inject } from '@angular/core';
+
+import { NgxGist, gistCodec } from './ngx-gist.model';
 import {
   decodeValueElseNull,
   isNonEmptyString,
   parsedJsonFromStringCodec,
 } from './ngx-gist.utilities';
-import * as io from 'io-ts';
 
 @Injectable()
 export class NgxGistService {
@@ -23,9 +25,9 @@ export class NgxGistService {
    */
   public get(gistId: string): Observable<NgxGist | null | undefined> {
     return this.httpClient
-      .get<NgxGist | string | null | undefined>(
-        `https://api.github.com/gists/${gistId}`,
-      )
+      .get<
+        NgxGist | string | null | undefined
+      >(`https://api.github.com/gists/${gistId}`)
       .pipe(
         catchError((error: unknown) => {
           console.error(error);

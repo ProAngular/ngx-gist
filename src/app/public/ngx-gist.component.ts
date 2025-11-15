@@ -1,15 +1,26 @@
-import { BehaviorSubject, filter, firstValueFrom, ReplaySubject } from 'rxjs';
-import { ChangeDetectionStrategy, Component, Input, OnInit, inject } from '@angular/core';
+import { UntilDestroy, untilDestroyed } from '@ngneat/until-destroy';
+import { BehaviorSubject, ReplaySubject, filter, firstValueFrom } from 'rxjs';
+
 import { CommonModule, DOCUMENT } from '@angular/common';
-import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
-import { GistFileFilterPipe } from './ngx-gist-file-filter.pipe';
-import { HighlightJsTheme, NgxGistThemeService } from './ngx-gist-theme.service';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  Input,
+  OnInit,
+  inject,
+} from '@angular/core';
 import { MatCardModule } from '@angular/material/card';
 import { MatTabsModule } from '@angular/material/tabs';
-import { NgxGist } from './ngx-gist.model';
+import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
+
+import { GistFileFilterPipe } from './ngx-gist-file-filter.pipe';
 import { NgxGistLineNumbersService } from './ngx-gist-line-numbers.service';
+import {
+  HighlightJsTheme,
+  NgxGistThemeService,
+} from './ngx-gist-theme.service';
+import { NgxGist } from './ngx-gist.model';
 import { NgxGistService } from './ngx-gist.service';
-import { UntilDestroy, untilDestroyed } from '@ngneat/until-destroy';
 import { isNonEmptyValue } from './ngx-gist.utilities';
 
 @UntilDestroy()
@@ -18,23 +29,16 @@ import { isNonEmptyValue } from './ngx-gist.utilities';
   templateUrl: './ngx-gist.component.html',
   styleUrl: './ngx-gist.component.scss',
   standalone: true,
-  imports: [
-      CommonModule,
-      GistFileFilterPipe,
-      MatCardModule,
-      MatTabsModule,
-  ],
-  providers: [
-    NgxGistLineNumbersService,
-    NgxGistService,
-    NgxGistThemeService,
-  ],
+  imports: [CommonModule, GistFileFilterPipe, MatCardModule, MatTabsModule],
+  providers: [NgxGistLineNumbersService, NgxGistService, NgxGistThemeService],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class NgxGistComponent implements OnInit {
   private readonly document: Document = inject(DOCUMENT);
   private readonly domSanitizer = inject(DomSanitizer);
-  private readonly ngxGistLineNumbersService = inject(NgxGistLineNumbersService);
+  private readonly ngxGistLineNumbersService = inject(
+    NgxGistLineNumbersService,
+  );
   private readonly ngxGistService = inject(NgxGistService);
   private readonly ngxGistThemeService = inject(NgxGistThemeService);
 
