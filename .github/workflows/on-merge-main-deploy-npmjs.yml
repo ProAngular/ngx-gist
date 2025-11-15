@@ -1,22 +1,25 @@
-# npmjs Package Deployment
-# https://docs.npmjs.com/about-packages-and-modules
-
 name: Verify and Deploy to npmjs
+
+permissions:
+  id-token: write
+  contents: read
+
 on:
   push:
-    branches:
-      - main
+    tags:
+      - 'v*'
+
 jobs:
   deploy_npmjs_package:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
         with:
           node-version: '20.x'
           registry-url: 'https://registry.npmjs.org'
+      - name: Update npm to latest
+        run: npm install -g npm@latest
       - run: npm ci
       - run: npm run npm-build-package
-      - run: cd dist/npm && npm publish --access=public
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
+      - run: cd dist/npm && npm publish

@@ -1,6 +1,6 @@
 {
   "name": "@proangular/ngx-gist",
-  "version": "20.3.6",
+  "version": "20.4.0",
   "description": "An Angular Material and HighlighJs styled display box for GitHub gist and local code snippets.",
   "author": "Pro Angular <webmaster@proangular.com>",
   "homepage": "https://www.proangular.com",
@@ -17,15 +17,13 @@
     "postinstall": "is-ci || husky install",
     "prettier": "prettier --write . --log-level silent",
     "prettier:check": "prettier --check .",
-    "start": "ng serve",
-    "start:open": "ng serve --open",
+    "start": "ng serve --open",
     "test": "ng test",
     "update": "ncu -u",
     "update:check": "ncu",
     "watch": "ng build --watch --configuration development"
   },
   "peerDependencies": {
-    "@angular/animations": ">=20 <21",
     "@angular/cdk": ">=20 <21",
     "@angular/common": ">=20 <21",
     "@angular/core": ">=20 <21",

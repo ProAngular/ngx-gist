@@ -1,5 +1,6 @@
-import { NgxGist } from './ngx-gist.model';
 import { Pipe, PipeTransform } from '@angular/core';
+
+import { NgxGist } from './ngx-gist.model';
 import { isNonEmptyString, isStringArray } from './ngx-gist.utilities';
 
 @Pipe({ name: 'gistFileFilter' })

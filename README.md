@@ -3,13 +3,24 @@
     <img src="https://raw.githubusercontent.com/ProAngular/ngx-gist/refs/heads/main/public/images/pro-angular-logo.png" />
   </a>
   <h1 align="center">
-    <a href="https://www.ProAngular.com" target="_blank">Pro Angular</a>: ngx-gist
+    @proangular/ngx-gist
   </h1>
-  <a align="center" href="https://github.com/ProAngular/ngx-gist" target="_blank">
-    View GitHub Repository
-  </a>
   <p align="center">
-    An Angular Material and HighlighJs styled display box for GitHub gist and local code snippets.
+    <a href="https://www.ProAngular.com" target="_blank">
+      ProAngular
+    </a>&nbsp;&nbsp;|&nbsp;&nbsp;
+    <a href="https://github.com/ProAngular/ngx-gist" target="_blank">
+      GitHub Repo
+    </a>&nbsp;&nbsp;|&nbsp;&nbsp;
+    <a href="https://www.npmjs.com/@proangular/ngx-gist" target="_blank">
+      NPM Package
+    </a>&nbsp;&nbsp;|&nbsp;&nbsp;
+    <a href="https://www.ProAngular.com/demos/ngx-gist" target="_blank">
+      Demo Page
+    </a>
+  </p>
+  <p align="center">
+    An Angular Material and HighlighJs styled display box for GitHub gist snippets and local code examples.
   </p>
 </div>
 
@@ -17,46 +28,73 @@
 <!---------------------------------------------------------------------------->
 <!---------------------------------------------------------------------------->
 
-[![npm](https://badgen.net/badge/icon/npm?icon=npm&label)](https://www.npmjs.com/@proangular/ngx-gist)
-[![GitHub](https://badgen.net/badge/icon/GitHub?icon=github&label)](https://github.com/ProAngular/ngx-gist)
-[![TypeScript](https://badgen.net/badge/icon/TypeScript?icon=typescript&label)](https://github.com/ProAngular/ngx-gist/search?l=typescript)
-[![npm Version](https://badge.fury.io/js/@proangular%2Fngx-gist.svg)](https://www.npmjs.com/@proangular/ngx-gist)
-[![Node Version](https://badgen.net/npm/node/@proangular/ngx-gist)](https://www.npmjs.com/@proangular/ngx-gist)
-[![Package Downloads](https://badgen.net/npm/dw/@proangular/ngx-gist)](https://www.npmjs.com/@proangular/ngx-gist)
-[![Size](https://img.shields.io/bundlephobia/minzip/@proangular/ngx-gist.svg)](https://bundlephobia.com/result?p=ProAngular/ngx-gist)
-[![Demo Status](https://badgen.net/badge/Demo/Online/green)](https://www.ProAngular.com/demos/ngx-gist)
-[![Website Status](https://img.shields.io/website?down_color=lightgrey&down_message=Offline&label=Website&up_color=green&up_message=Online&url=https%3A%2F%2Fwww.proangular.com)](https://www.proangular.com)
-[![Gitter Chat](https://badges.gitter.im/ProAngular/lobby.svg)](https://gitter.im/ProAngular/community)
-[![Discord Chat](https://img.shields.io/discord/1003103094588055552?label=Discord)](https://discord.com/channels/1003103094588055552)
-[![Sponsors](https://img.shields.io/github/sponsors/proangular?label=Sponsors)](https://github.com/sponsors/ProAngular)
-[![License](https://img.shields.io/npm/l/express.svg?maxAge=2592000)](/LICENSE)
-[![GitHub Package Status](https://github.com/ProAngular/ngx-gist/actions/workflows/on-merge-main-deploy-gpr.yml/badge.svg)](https://github.com/ProAngular/ngx-gist/actions/workflows/on-merge-main-deploy-gpr.yml)
-[![npmjs Package Status](https://github.com/ProAngular/ngx-gist/actions/workflows/on-merge-main-deploy-npmjs.yml/badge.svg)](https://github.com/ProAngular/ngx-gist/actions/workflows/on-merge-main-deploy-npmjs.yml)
+<p align="center">
+  <a href="https://www.npmjs.com/@proangular/ngx-gist" target="_blank">
+    <img src="https://badge.fury.io/js/@proangular%2Fngx-gist.svg" >
+  </a>
+  <a href="https://bundlephobia.com/result?p=ProAngular/ngx-gist" target="_blank">
+    <img src="https://img.shields.io/bundlephobia/minzip/@proangular/ngx-gist.svg" >
+  </a>
+  <a href="/LICENSE" target="_blank">
+    <img src="https://img.shields.io/npm/l/express.svg?maxAge=2592000" >
+  </a>
+</p>
+
+<!--
+<p align="center">
+  <a href="https://github.com/ProAngular/ngx-gist/actions/workflows/on-merge-main-deploy-gpr.yml" target="_blank">
+    <img src="https://github.com/ProAngular/ngx-gist/actions/workflows/on-merge-main-deploy-gpr.yml/badge.svg" >
+  </a>
+  <a href="https://github.com/ProAngular/ngx-gist/actions/workflows/on-merge-main-deploy-npmjs.yml" target="_blank">
+    <img src="https://github.com/ProAngular/ngx-gist/actions/workflows/on-merge-main-deploy-npmjs.yml/badge.svg" >
+  </a>
+</p>
+-->
 
 <!---------------------------------------------------------------------------->
 <!---------------------------------------------------------------------------->
 <!---------------------------------------------------------------------------->
 
-## Index <a name="index"></a>
-
-- [Information](#information)
-- [Description](#description)
-- [Demo](#demo)
-- [Installation](#installation)
-  - [Prerequisites](#prerequisites)
-  - [Install Component](#install-component)
-- [Usage](#usage)
-- [Component API](#api)
-- [Compatibility](#compatibility)
-- [Development](#development)
-- [Licensing](#licensing)
-- [Wrapping Up](#wrapping-up)
+<p align="center">
+  <code>ng add @proangular/ngx-gist</code>
+</p>
+<p align="center">
+  <img src="https://raw.githubusercontent.com/ProAngular/ngx-gist/refs/heads/main/public/images/demo-gist.gif" />
+</p>
+<p align="center">
+  <a href="https://www.ProAngular.com/demos/ngx-gist" target="_blank">Click here to preview it live!</a>
+</p>
 
 <!---------------------------------------------------------------------------->
 <!---------------------------------------------------------------------------->
 <!---------------------------------------------------------------------------->
 
-## Information <a name="information"></a>
+## 📇 Index <a name="index"></a>
+
+- [ℹ️ Information](#information)
+- [📄 Description](#description)
+- [📦 Installation](#installation)
+  - [📋 Prerequisites](#prerequisites)
+  - [📥 Install Component](#install-component)
+- [💻 Usage](#usage)
+  - [⏳ Default - fetched gist](#default-fetched-gist)
+  - [🔄 Fetched gist (forced no cache)](#fetched-gist)
+  - [🎨 Setting the code style theme](#setting-the-code-style)
+  - [🎯 Displaying one specific file](#displaying-one-specific-file)
+  - [📂 Displaying multiple, specific files](#displaying-multiple-specific-files)
+  - [📝 Displaying a basic code snippet (without a remote gist)](#displaying-a-basic-code-snippet)
+  - [👻 Hiding line numbers](#hiding-line-numbers)
+- [🧩 Component API](#api)
+- [🧪 Compatibility](#compatibility)
+- [🔨 Development](#development)
+- [⚖️ Licensing](#licensing)
+- [🏁 Wrapping Up](#wrapping-up)
+
+<!---------------------------------------------------------------------------->
+<!---------------------------------------------------------------------------->
+<!---------------------------------------------------------------------------->
+
+## ℹ️ Information <a name="information"></a>
 
 What is Gist? Gist is an easy method to share snippets or excerpts of data with
 others. A gist can be a string of code, a bash script or some other small piece
@@ -70,13 +108,13 @@ More info in the following links:
   https://docs.github.com/en/get-started/writing-on-github/editing-and-sharing-content-with-gists/creating-gists
 - Create a gist: https://gist.github.com/
 
-<p align="right">[ <a href="#index">Index</a> ]</p>
+<p align="right">[ <a href="#index">🔍 Index</a> ]</p>
 
 <!---------------------------------------------------------------------------->
 <!---------------------------------------------------------------------------->
 <!---------------------------------------------------------------------------->
 
-## Description <a name="description"></a>
+## 📄 Description <a name="description"></a>
 
 Behold, this package contains an Angular Material and Highlight.js styled
 element which displays your GitHub gists in a conveniant, easy to view
@@ -89,33 +127,18 @@ GitHub gists can be created here: https://gist.github.com/
 
 Enjoy!
 
-<p align="right">[ <a href="#index">Index</a> ]</p>
+<p align="right">[ <a href="#index">🔍 Index</a> ]</p>
 
 <!---------------------------------------------------------------------------->
 <!---------------------------------------------------------------------------->
 <!---------------------------------------------------------------------------->
 
-## Demo <a name="demo"></a>
-
-<p align="center">
-  <img src="https://raw.githubusercontent.com/ProAngular/ngx-gist/refs/heads/main/public/images/demo-gist.gif" />
-</p>
-
-Live demo here:
-[https://www.ProAngular.com/demos/ngx-gist](https://www.ProAngular.com/demos/ngx-gist)
-
-<p align="right">[ <a href="#index">Index</a> ]</p>
-
-<!---------------------------------------------------------------------------->
-<!---------------------------------------------------------------------------->
-<!---------------------------------------------------------------------------->
-
-## Installation <a name="installation"></a>
+## 📦 Installation <a name="installation"></a>
 
 Using Node Package Manager ([NPM][url-node-js]) in a new terminal window run the
 following commands to install the required dependencies.
 
-### Prerequisites <a name="prerequisites"></a>
+### 📋 Prerequisites <a name="prerequisites"></a>
 
 **Angular Material**
 
@@ -147,7 +170,11 @@ npm install io-ts --save
 npm install io-ts-types --save
 ```
 
-### Install Gist Components <a name="install-component"></a>
+<!---------------------------------------------------------------------------->
+<!---------------------------------------------------------------------------->
+<!---------------------------------------------------------------------------->
+
+### 📥 Install Gist Components <a name="install-component"></a>
 
 ```bash
 ng add @proangular/ngx-gist@latest
@@ -159,13 +186,13 @@ or
 npm install @proangular/ngx-gist --save
 ```
 
-<p align="right">[ <a href="#index">Index</a> ]</p>
+<p align="right">[ <a href="#index">🔍 Index</a> ]</p>
 
 <!---------------------------------------------------------------------------->
 <!---------------------------------------------------------------------------->
 <!---------------------------------------------------------------------------->
 
-## Usage <a name="usage"></a>
+## 💻 Usage <a name="usage"></a>
 
 Import one or all of the following custom form components to use in your Angular
 application where used:
@@ -204,7 +231,7 @@ Note: For example your gist id would be `TH1515TH3G15T1D` in:
 
 https://gist.github.com/YourUserName/TH1515TH3G15T1D
 
-### Default - fetched gist (auto cached for 24 hours)
+### ⏳ Default - fetched gist (auto cached for 24 hours) <a name="default-fetched-gist"></a>
 
 ngx-gist will fetch the gist once and store it locally for 24 hours. In that
 timeframe, if the user returns or visits another page where this gist was
@@ -215,7 +242,11 @@ GitHub again.
 <ngx-gist gistId="TH1515TH3G15T1D"></ngx-gist>
 ```
 
-### Fetched gist (forced no cache)
+<!---------------------------------------------------------------------------->
+<!---------------------------------------------------------------------------->
+<!---------------------------------------------------------------------------->
+
+### 🔄 Fetched gist (forced no cache) <a name="fetched-gist"></a>
 
 Force no cache. This will force ngx-gist to retrieve the content live from
 GitHub every time this content loads. This is disabled by default, but could be
@@ -225,7 +256,11 @@ useful if your gists change frequently.
 <ngx-gist gistId="TH1515TH3G15T1D" [useCache]="false"></ngx-gist>
 ```
 
-### Setting the code style theme
+<!---------------------------------------------------------------------------->
+<!---------------------------------------------------------------------------->
+<!---------------------------------------------------------------------------->
+
+### 🎨 Setting the code style theme <a name="setting-the-code-style"></a>
 
 Select a "highlight.js" code theme to apply. Note: Only one theme can be loaded
 on a single page at a time! The first theme to load will apply to all gists on
@@ -235,7 +270,11 @@ the page.
 <ngx-gist codeTheme="github" gistId="TH1515TH3G15T1D"></ngx-gist>
 ```
 
-### Displaying one specific file
+<!---------------------------------------------------------------------------->
+<!---------------------------------------------------------------------------->
+<!---------------------------------------------------------------------------->
+
+### 🎯 Displaying one specific file <a name="displaying-one-specific-file"></a>
 
 Display only one specific file when your gist has many.
 
@@ -243,7 +282,11 @@ Display only one specific file when your gist has many.
 <ngx-gist displayOnlyFileNames="super.js" gistId="TH1515TH3G15T1D"></ngx-gist>
 ```
 
-### Displaying multiple, specific files
+<!---------------------------------------------------------------------------->
+<!---------------------------------------------------------------------------->
+<!---------------------------------------------------------------------------->
+
+### 📂 Displaying multiple, specific files <a name="displaying-multiple-specific-files"></a>
 
 You can also display any number of specific files by name.
 
@@ -254,7 +297,11 @@ You can also display any number of specific files by name.
 ></ngx-gist>
 ```
 
-### Displaying a basic code snippet (without a remote gist)
+<!---------------------------------------------------------------------------->
+<!---------------------------------------------------------------------------->
+<!---------------------------------------------------------------------------->
+
+### 📝 Displaying a basic code snippet (without a remote gist) <a name="displaying-a-basic-code-snippet"></a>
 
 These are not fetched from GitHub and are brought in elsewhere from your
 application (seperate HTTP request, or statically for example). With this method
@@ -266,7 +313,11 @@ Note: no "Open Gist on GitHub" link will display.
 <ngx-gist [gist]="localGistObject"></ngx-gist>
 ```
 
-### Hiding line numbers
+<!---------------------------------------------------------------------------->
+<!---------------------------------------------------------------------------->
+<!---------------------------------------------------------------------------->
+
+### 👻 Hiding line numbers <a name="hiding-line-numbers"></a>
 
 Line numbers are enabled by default, but you can turn them off like so.
 
@@ -274,13 +325,13 @@ Line numbers are enabled by default, but you can turn them off like so.
 <ngx-gist gistId="TH1515TH3G15T1D" [showLineNumbers]="false"></ngx-gist>
 ```
 
-<p align="right">[ <a href="#index">Index</a> ]</p>
+<p align="right">[ <a href="#index">🔍 Index</a> ]</p>
 
 <!---------------------------------------------------------------------------->
 <!---------------------------------------------------------------------------->
 <!---------------------------------------------------------------------------->
 
-## Component API <a name="api"></a>
+## 🧩 Component API <a name="api"></a>
 
 | Input Name               | Input Typing                         | Default Value | Description                                                                                                                                                                                                                                                                |
 | ------------------------ | ------------------------------------ | ------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -293,13 +344,13 @@ Line numbers are enabled by default, but you can turn them off like so.
 | **showLineNumbers**      | `bool`                               | `true`        | Display or hide the line numbers in your gist code snippets.                                                                                                                                                                                                               |
 | **useCache**             | `bool`                               | `true`        | Cache the GitHub gist request in local memory for 24 hours. GitHub has a request limit, so this helps in reducing bandwidth. Loads previously fetched gist content from the users machine on refresh and page re-visits.                                                   |
 
-<p align="right">[ <a href="#index">Index</a> ]</p>
+<p align="right">[ <a href="#index">🔍 Index</a> ]</p>
 
 <!---------------------------------------------------------------------------->
 <!---------------------------------------------------------------------------->
 <!---------------------------------------------------------------------------->
 
-## Compatibility <a name="compatibility"></a>
+## 🧪 Compatibility <a name="compatibility"></a>
 
 | Angular version | @proangular/ngx-gist | Install                              |
 | --------------- | -------------------- | ------------------------------------ |
@@ -313,13 +364,13 @@ Line numbers are enabled by default, but you can turn them off like so.
 | v13             | v1.0.x               | `ng add @proangular/ngx-gist@~1.0.8` |
 | v12             | v1.0.x               | `ng add @proangular/ngx-gist@~1.0.8` |
 
-<p align="right">[ <a href="#index">Index</a> ]</p>
+<p align="right">[ <a href="#index">🔍 Index</a> ]</p>
 
 <!---------------------------------------------------------------------------->
 <!---------------------------------------------------------------------------->
 <!---------------------------------------------------------------------------->
 
-## Development <a name="development"></a>
+## 🔨 Development <a name="development"></a>
 
 Please submit all issues, and feature requests here:
 [https://github.com/ProAngular/ngx-gist/issues][url-new-issue]
@@ -348,26 +399,26 @@ Contribution:
 
 Thank you for any and all contributions!
 
-<p align="right">[ <a href="#index">Index</a> ]</p>
+<p align="right">[ <a href="#index">🔍 Index</a> ]</p>
 
 <!---------------------------------------------------------------------------->
 <!---------------------------------------------------------------------------->
 <!---------------------------------------------------------------------------->
 
-## Licensing <a name="licensing"></a>
+## ⚖️ Licensing <a name="licensing"></a>
 
 This project is licensed under the **MIT** License. See the
 [LICENSE](LICENSE.md) file for the pertaining license text.
 
 `SPDX-License-Identifier: MIT`
 
-<p align="right">[ <a href="#index">Index</a> ]</p>
+<p align="right">[ <a href="#index">🔍 Index</a> ]</p>
 
 <!---------------------------------------------------------------------------->
 <!---------------------------------------------------------------------------->
 <!---------------------------------------------------------------------------->
 
-## Wrapping Up <a name="wrapping-up"></a>
+## 🏁 Wrapping Up <a name="wrapping-up"></a>
 
 Thank you to the entire Angular team and community for such a great framework to
 build upon. If you have any questions, please let me know by opening an issue

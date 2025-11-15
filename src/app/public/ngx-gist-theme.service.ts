@@ -1,5 +1,5 @@
-import { Injectable, inject } from '@angular/core';
 import { DOCUMENT } from '@angular/common';
+import { Injectable, inject } from '@angular/core';
 
 @Injectable({ providedIn: 'root' }) // Must be a singleton
 export class NgxGistThemeService {
@@ -14,10 +14,7 @@ export class NgxGistThemeService {
     if (hljsThemeLinkEl && hilightJsTheme === 'default') {
       // Default theme already in use, return.
       return;
-    } else if (
-      hljsThemeLinkEl &&
-      hilightJsTheme !== 'default'
-    ) {
+    } else if (hljsThemeLinkEl && hilightJsTheme !== 'default') {
       // Override previously used theme, but remove it first.
       this.document.head.removeChild(hljsThemeLinkEl);
     }

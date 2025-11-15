@@ -8,6 +8,8 @@ public/
 # Do not ignore the following files
 !.github/
 !src/
+!src/**
+!src/**/*
 !README.md
 
 # Re-ignore sub-directories from the above exempt directories:

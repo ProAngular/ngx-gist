@@ -1,6 +1,6 @@
-import * as io from 'io-ts';
-import { pipe } from 'fp-ts/es6/function';
 import { getOrElse } from 'fp-ts/es6/Either';
+import { pipe } from 'fp-ts/es6/function';
+import * as io from 'io-ts';
 
 /**
  * Validate that the value is a string.

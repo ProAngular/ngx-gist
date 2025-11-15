@@ -1,11 +1,12 @@
+import hljs from 'highlight.js';
 import * as io from 'io-ts';
 import * as iot from 'io-ts-types';
+
 import {
   decodeValueElseNull,
   isNonEmptyString,
   parsedJsonFromStringCodec,
 } from './ngx-gist.utilities';
-import hljs from 'highlight.js';
 
 export class NgxGist implements Gist {
   public constructor(args: Gist & Pick<NgxGist, 'languageOverride'>) {

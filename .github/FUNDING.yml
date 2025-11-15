@@ -1,32 +1,4 @@
-# Displaying a sponsor button in your repository
-# https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/displaying-a-sponsor-button-in-your-repository
-
-# LFX Mentorship (formerly CommunityBridge)
-# https://lfx.linuxfoundation.org/tools/mentorship
-community_bridge:
-# GitHub Sponsors
-# https://github.com/sponsors
-github: [ProAngular, CodyTolene]
-# IssueHunt
-# https://issuehunt.io/
-issuehunt:
-# Ko-fi
-# https://ko-fi.com/
-ko_fi:
-# Liberapay
-# https://en.liberapay.com/
-liberapay:
-# Open Collective
-# https://opencollective.com/
-open_collective:
-# Otechie
-# https://otechie.com/
-otechie:
-# Patreon
-# https://www.patreon.com/
-patreon:
-# Tidelift
-# https://tidelift.com/
-tidelift:
-# Custom URL
+github: [CodyTolene, ProAngular]
+buy_me_a_coffee: CodyTolene
+patreon: CodyTolene
 custom: ['https://www.paypal.me/CodyTolene']
