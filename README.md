@@ -20,7 +20,7 @@
     </a>
   </p>
   <p align="center">
-    An Angular Material and HighlighJs styled display box for GitHub gist and local code snippets.
+    An Angular Material and HighlighJs styled display box for GitHub gist snippets and local code examples.
   </p>
 </div>
 
