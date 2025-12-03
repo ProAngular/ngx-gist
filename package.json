@@ -24,9 +24,9 @@
     "watch": "ng build --watch --configuration development"
   },
   "peerDependencies": {
-    "@angular/cdk": ">=20 <21",
-    "@angular/material": ">=20 <21",
-    "@angular/material-luxon-adapter": ">=20 <21",
+    "@angular/cdk": "21.0.1",
+    "@angular/material": "21.0.1",
+    "@angular/material-luxon-adapter": "21.0.1",
     "@ngneat/until-destroy": ">=10 <11",
     "highlight.js": ">=11.5 <12",
     "highlightjs-line-numbers.js": ">=2.5 <3",
