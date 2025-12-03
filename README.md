@@ -354,6 +354,7 @@ Line numbers are enabled by default, but you can turn them off like so.
 
 | Angular version | @proangular/ngx-gist | Install                              |
 | --------------- | -------------------- | ------------------------------------ |
+| v21             | v21.x                | `ng add @proangular/ngx-gist@^21`    |
 | v20             | v20.x                | `ng add @proangular/ngx-gist@^20`    |
 | v19             | v19.x                | `ng add @proangular/ngx-gist@^19`    |
 | v18             | ------               | Untested                             |
