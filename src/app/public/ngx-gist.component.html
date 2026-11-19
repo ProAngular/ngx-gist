@@ -1,8 +1,8 @@
 <mat-card class="code-container">
-  @if (gistChanges | async; as gist) {
+  @if (displayedGist(); as gist) {
     <mat-tab-group>
       @for (
-        file of gist.highlightedFiles | gistFileFilter: displayOnlyFileNames;
+        file of gist.highlightedFiles | gistFileFilter: displayOnlyFileNames();
         track file
       ) {
         <mat-tab [label]="file.filename">
@@ -22,9 +22,9 @@
   } @else {
     Loading Code Snippet...
   }
-  @if (gistIdChanges | async; as gid) {
+  @if (gistId(); as gid) {
     <mat-card-footer>
-      @if (!hideGistLink) {
+      @if (!hideGistLink()) {
         <a target="_blank" [href]="'https://gist.github.com/' + gid">
           🔗 Open Gist on GitHub
         </a>

@@ -4,7 +4,11 @@ jobs:
   verify_pull_request:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v6
+      - uses: actions/setup-node@v6
+        with:
+          node-version: 24
+          cache: npm
       - name: Checkout 🛎️
         run: npm ci
 
@@ -12,6 +16,7 @@ jobs:
         run: |
           npm run lint
           npm run prettier:check
+          npm test -- --watch=false
 
       - name: Build 🔧
         run: |

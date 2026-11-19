@@ -20,9 +20,6 @@
             "outputPath": "dist/ngx-gist",
             "index": "src/index.html",
             "browser": "src/main.ts",
-            "polyfills": [
-              "zone.js"
-            ],
             "tsConfig": "tsconfig.app.json",
             "inlineStyleLanguage": "scss",
             "assets": [
@@ -76,24 +73,24 @@
           "builder": "@angular/build:extract-i18n"
         },
         "test": {
-          "builder": "@angular/build:karma",
+          "builder": "@angular/build:unit-test",
           "options": {
-            "polyfills": [
-              "zone.js",
-              "zone.js/testing"
+            "runnerConfig": "vitest.config.mjs",
+            "coverageInclude": [
+              "src/app/public/**/*.ts"
             ],
-            "tsConfig": "tsconfig.spec.json",
-            "inlineStyleLanguage": "scss",
-            "assets": [
-              {
-                "glob": "**/*",
-                "input": "public"
-              }
+            "coverageExclude": [
+              "**/*.spec.ts",
+              "**/*.testing.ts",
+              "**/public.ts"
             ],
-            "styles": [
-              "src/styles.scss"
-            ],
-            "scripts": []
+            "coverageReporters": [
+              "text",
+              "text-summary",
+              "html",
+              "lcov",
+              "json-summary"
+            ]
           }
         },
         "lint": {
@@ -109,6 +106,10 @@
     }
   },
   "cli": {
+    "cache": {
+      "enabled": true,
+      "path": ".cache/angular"
+    },
     "schematicCollections": [
       "@angular-eslint/schematics"
     ]

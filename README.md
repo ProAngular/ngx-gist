@@ -167,7 +167,6 @@ npm install highlightjs-line-numbers.js --save
 
 ```bash
 npm install io-ts --save
-npm install io-ts-types --save
 ```
 
 <!---------------------------------------------------------------------------->
@@ -354,6 +353,7 @@ Line numbers are enabled by default, but you can turn them off like so.
 
 | Angular version | @proangular/ngx-gist | Install                              |
 | --------------- | -------------------- | ------------------------------------ |
+| v22             | v22.x                | `ng add @proangular/ngx-gist@^22`    |
 | v21             | v21.x                | `ng add @proangular/ngx-gist@^21`    |
 | v20             | v20.x                | `ng add @proangular/ngx-gist@^20`    |
 | v19             | v19.x                | `ng add @proangular/ngx-gist@^19`    |
@@ -364,6 +364,15 @@ Line numbers are enabled by default, but you can turn them off like so.
 | v14             | v1.0.x               | `ng add @proangular/ngx-gist@~1.0.8` |
 | v13             | v1.0.x               | `ng add @proangular/ngx-gist@~1.0.8` |
 | v12             | v1.0.x               | `ng add @proangular/ngx-gist@~1.0.8` |
+
+v22 moves ngx-gist to Angular 22. The inputs are signal inputs now and the
+component works without zone.js, so it runs fine in a zoneless app. Selectors
+and input names are the same, so your templates don't change. You can drop
+`io-ts-types`, `zone.js` and `@ngneat/until-destroy` as far as ngx-gist is
+concerned, it doesn't use them anymore. The `gistChanges` and `gistIdChanges`
+observables on the component are gone since nothing outside the component should
+have been relying on them. Tests run on Vitest instead of Karma, and Node 24 is
+required to build the library.
 
 <p align="right">[ <a href="#index">🔍 Index</a> ]</p>
 
