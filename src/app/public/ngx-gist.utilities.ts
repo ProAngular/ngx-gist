@@ -1,5 +1,3 @@
-import { getOrElse } from 'fp-ts/es6/Either';
-import { pipe } from 'fp-ts/es6/function';
 import * as io from 'io-ts';
 
 /**
@@ -25,11 +23,23 @@ export function isNonEmptyValue<T>(value: T): value is NonNullable<T> {
 }
 
 /**
+ * Plain io-ts codec for `Date` instances. It replaces the `date` codec that
+ * used to come from `io-ts-types`.
+ */
+export const dateCodec = new io.Type<Date, Date, unknown>(
+  'Date',
+  (value): value is Date => value instanceof Date,
+  (value, context) =>
+    value instanceof Date ? io.success(value) : io.failure(value, context),
+  io.identity,
+);
+
+/**
  * Decode by parsing json object of string value.
  */
 export const parsedJsonFromStringCodec = new io.Type<unknown, string, string>(
   'ParsedJSONFromString',
-  (potentiallyUnknownValue): potentiallyUnknownValue is unknown => true,
+  (_value): _value is unknown => true,
   (stringValue, context) => {
     try {
       return io.success(JSON.parse(stringValue));
@@ -54,9 +64,8 @@ export const parsedJsonFromStringCodec = new io.Type<unknown, string, string>(
 export function decodeValueElseNull<A, I, O = unknown>(
   codec: io.Type<A, O, I>,
 ): (value: I) => A | null {
-  return (value) =>
-    pipe(
-      codec.decode(value),
-      getOrElse(() => null as A | null),
-    );
+  return (value) => {
+    const result = codec.decode(value);
+    return result._tag === 'Right' ? result.right : null;
+  };
 }

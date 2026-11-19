@@ -1,8 +1,8 @@
 import hljs from 'highlight.js';
 import * as io from 'io-ts';
-import * as iot from 'io-ts-types';
 
 import {
+  dateCodec,
   decodeValueElseNull,
   isNonEmptyString,
   parsedJsonFromStringCodec,
@@ -168,17 +168,10 @@ function getHighlightedContent(
   baseContent: string,
   languageOverride?: string,
 ): string {
-  let highlighted = baseContent;
-
   if (languageOverride) {
-    highlighted = hljs.highlight(baseContent, {
-      language: languageOverride,
-    }).value;
-  } else {
-    highlighted = hljs.highlightAuto(baseContent).value;
+    return hljs.highlight(baseContent, { language: languageOverride }).value;
   }
-
-  return highlighted;
+  return hljs.highlightAuto(baseContent).value;
 }
 
 const gitHubUserCodec = io.readonly(
@@ -217,7 +210,7 @@ const gistHistoryChangeStatusCodec = io.readonly(
 const gistHistoryCodec = io.readonly(
   io.type({
     change_status: gistHistoryChangeStatusCodec,
-    committed_at: io.union([iot.date, io.string]),
+    committed_at: io.union([dateCodec, io.string]),
     url: io.string,
     user: gitHubUserCodec,
     version: io.string,
@@ -244,7 +237,7 @@ export const gistCodec = io.readonly(
       comments: io.number,
       comments_url: io.string,
       commits_url: io.string,
-      created_at: io.union([iot.date, io.string]),
+      created_at: io.union([dateCodec, io.string]),
       description: io.string,
       files: gistFilesCodec,
       forks: io.UnknownArray,
@@ -257,7 +250,7 @@ export const gistCodec = io.readonly(
       node_id: io.string,
       public: io.boolean,
       truncated: io.boolean,
-      updated_at: io.union([iot.date, io.string]),
+      updated_at: io.union([dateCodec, io.string]),
       url: io.string,
     }),
     io.partial({

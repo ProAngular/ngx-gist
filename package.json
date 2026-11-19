@@ -1,12 +1,12 @@
 {
   "name": "@proangular/ngx-gist",
-  "version": "21.0.0",
+  "version": "22.0.0",
   "description": "An Angular Material and HighlighJs styled display box for GitHub gist and local code snippets.",
   "author": "Pro Angular <webmaster@proangular.com>",
   "homepage": "https://www.proangular.com",
   "private": false,
   "engines": {
-    "node": ">=20"
+    "node": ">=24.15.0 <25"
   },
   "scripts": {
     "build": "ng build",
@@ -14,63 +14,57 @@
     "lint": "ng lint",
     "ng": "ng",
     "npm-build-package": "ng-packagr -p ng-package.json",
-    "postinstall": "is-ci || husky install",
+    "postinstall": "is-ci || husky",
     "prettier": "prettier --write . --log-level silent",
     "prettier:check": "prettier --check .",
     "start": "ng serve --open",
     "test": "ng test",
     "update": "ncu -u",
     "update:check": "ncu",
-    "watch": "ng build --watch --configuration development"
+    "watch": "ng build --watch --configuration development",
+    "test:coverage": "ng test --watch=false --coverage"
   },
   "peerDependencies": {
-    "@angular/cdk": ">=21 <22",
-    "@angular/material": ">=21 <22",
-    "@angular/material-luxon-adapter": ">=21 <22",
-    "@ngneat/until-destroy": ">=10 <11",
+    "@angular/common": ">=22 <23",
+    "@angular/core": ">=22 <23",
+    "@angular/cdk": ">=22 <23",
+    "@angular/material": ">=22 <23",
     "highlight.js": ">=11.5 <12",
     "highlightjs-line-numbers.js": ">=2.5 <3",
     "io-ts": ">=2 <3",
-    "io-ts-types": ">=0.5 <1",
-    "luxon": ">=3 <4",
-    "rxjs": ">=7.5 <9",
-    "zone.js": ">=0.15 <0.16"
+    "rxjs": ">=7.5 <9"
   },
   "devDependencies": {
-    "@angular/build": "^21.0.1",
-    "@angular/cli": "^20.0.6",
-    "@angular/common": "21.0.2",
-    "@angular/compiler": "21.0.2",
-    "@angular/compiler-cli": "21.0.2",
-    "@angular/core": "21.0.2",
-    "@angular/forms": "21.0.2",
-    "@angular/platform-browser": "21.0.2",
-    "@angular/platform-browser-dynamic": "21.0.2",
-    "@angular/router": "21.0.2",
-    "@trivago/prettier-plugin-sort-imports": "^5.2.2",
-    "@types/jasmine": "~5.1.8",
-    "@types/luxon": "^3.4.2",
-    "@types/node": "^24.2.1",
-    "angular-eslint": "^21.0.1",
-    "eslint": "^9.33.0",
+    "@angular/build": "^22.2.7",
+    "@angular/cdk": "^22.2.7",
+    "@angular/cli": "^22.2.7",
+    "@angular/common": "^22.2.0",
+    "@angular/compiler": "^22.2.0",
+    "@angular/compiler-cli": "^22.2.0",
+    "@angular/core": "^22.2.0",
+    "@angular/forms": "^22.2.0",
+    "@angular/material": "^22.2.7",
+    "@angular/platform-browser": "^22.2.0",
+    "@angular/router": "^22.2.0",
+    "@eslint/js": "^10.0.1",
+    "@trivago/prettier-plugin-sort-imports": "^6.0.2",
+    "@types/node": "^24",
+    "@vitest/coverage-v8": "^5.1.1",
+    "angular-eslint": "^22.7.0",
+    "eslint": "^10.15.0",
     "eslint-config-prettier": "^10.1.8",
-    "eslint-plugin-import": "^2.32.0",
-    "eslint-plugin-jsdoc": "^54.0.0",
     "eslint-plugin-prefer-arrow": "^1.2.3",
     "husky": "^9.1.7",
     "is-ci": "^4.1.0",
-    "jasmine-core": "~5.9.0",
-    "karma": "~6.4.4",
-    "karma-chrome-launcher": "~3.2.0",
-    "karma-coverage": "~2.2.1",
-    "karma-jasmine": "~5.1.0",
-    "karma-jasmine-html-reporter": "~2.1.0",
-    "ng-packagr": "^21.0.0",
-    "npm-check-updates": "^18.0.2",
-    "prettier": "^3.6.2",
+    "jsdom": "^30.0.0",
+    "ng-packagr": "^22.2.6",
+    "npm-check-updates": "^23.1.1",
+    "prettier": "^3.10.1",
+    "rxjs": "^7.8.2",
     "tslib": "^2.8.1",
-    "typescript": "~5.9.3",
-    "typescript-eslint": "^8.39.1"
+    "typescript": "~6.0.2",
+    "typescript-eslint": "^8.72.2",
+    "vitest": "^5.0.0"
   },
   "contributors": [
     {
@@ -105,5 +99,11 @@
   "publishConfig": {
     "access": "public"
   },
-  "main": "src/main.ts"
+  "main": "src/main.ts",
+  "allowScripts": {
+    "esbuild@0.28.2": true,
+    "@parcel/watcher@2.6.0": true,
+    "lmdb@3.5.9": true,
+    "msgpackr-extract@3.0.7": true
+  }
 }

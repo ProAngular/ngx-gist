@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { Component } from '@angular/core';
 
 import { NgxGistComponent } from '../public/ngx-gist.component';
 import { NgxGist } from '../public/ngx-gist.model';
@@ -7,9 +7,7 @@ import { NgxGist } from '../public/ngx-gist.model';
   selector: 'ngx-example',
   templateUrl: './example.component.html',
   imports: [NgxGistComponent],
-  standalone: true,
   styleUrl: './example.component.scss',
-  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ExampleComponent {
   public readonly localGistObject = NgxGist.create({

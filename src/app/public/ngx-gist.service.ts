@@ -25,9 +25,9 @@ export class NgxGistService {
    */
   public get(gistId: string): Observable<NgxGist | null | undefined> {
     return this.httpClient
-      .get<
-        NgxGist | string | null | undefined
-      >(`https://api.github.com/gists/${gistId}`)
+      .get<NgxGist | string | null | undefined>(
+        `https://api.github.com/gists/${gistId}`,
+      )
       .pipe(
         catchError((error: unknown) => {
           console.error(error);
